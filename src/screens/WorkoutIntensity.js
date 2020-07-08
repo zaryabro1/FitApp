@@ -35,7 +35,7 @@ export default class WorkoutIntensity extends Component {
             <Text style={styles.logoStyle}>
               {this.props.route.params.title}
             </Text>
-            <ScrollView>
+            <ScrollView style={{paddingTop: 10}}>
               <Button
                 buttonText={CHALLENGE_LEVEL.beginner1}
                 style={{
@@ -92,7 +92,7 @@ export default class WorkoutIntensity extends Component {
                   justifyContent: 'center',
                   alignItems: 'center',
                   marginVertical: 10,
-                  marginTop: 40,
+                  marginTop: width*0.065,
                 }}
                 onPress={() => {
                   this.props.navigation.navigate('ExerciseScreen', {
@@ -136,7 +136,7 @@ export default class WorkoutIntensity extends Component {
                   justifyContent: 'center',
                   alignItems: 'center',
                   marginVertical: 10,
-                  marginTop: 40,
+                  marginTop: width*0.065,
                 }}
                 onPress={() => {
                   this.props.navigation.navigate('ExerciseScreen', {
@@ -208,7 +208,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 1002,
-    top: 0,
+    top: width*0.05,
     left: 0,
     right: 0,
     bottom: 0,
@@ -224,7 +224,8 @@ const styles = {
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',
-    marginTop: 30,
+    marginTop: width*0.07,
+    marginBottom: width*0.05
   },
   createNewAccount: {
     borderBottomWidth: 1,

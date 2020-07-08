@@ -207,7 +207,7 @@ const styles = {
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',
-    marginTop: 30,
+    marginTop: width*0.1,
   },
   typeStyle: {
     fontSize: 18,
