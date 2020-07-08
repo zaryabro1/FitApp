@@ -68,7 +68,7 @@ class AboutMe extends Component {
           backgroundColor={'transparent'}
         />
         <Image
-          source={require('../../assets/imageFour.jpg')}
+          source={require('../../assets/imageTwelve.jpg')}
           style={styles.splashImage}
         />
         <LinearGradieant
@@ -79,20 +79,39 @@ class AboutMe extends Component {
             <View
               style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
               <View style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',
                 justifyContent: 'center',
                 alignItems: 'center',
                 // paddingHorizontal: width * 0.08,
-                paddingVertical: width * 0.04,
+                paddingVertical: width * 0.06,
                 borderWidth: 1,
                 borderColor: '#FFFFFF',
                 borderRadius: width * 0.02,
                 width: width * 0.55,
               }}>
-                <Text style={styles.typeStyle}>Sex: {this.state.sex}</Text>
-                <Text style={styles.typeStyle}>
-                  Weight: {this.state.weight} {this.state.weightType}{' '}
-                </Text>
+                <View style={{flexDirection: 'row', justifyContent: 'space-between', width: '100%', paddingHorizontal: width*0.04}}>
+                   <Text style={styles.typeStyle}>Sex:</Text>
+                   <Text style={styles.typeStyle}> {this.state.sex}</Text>
+                </View>
+                <View style={{width: '100%', borderBottomWidth: 1, borderBottomColor: '#FFFFFF', marginTop: width*0.01}}/>
+                <View style={{flexDirection: 'row', justifyContent: 'space-between', width: '100%', paddingHorizontal: width*0.04}}>
+                  <Text style={styles.typeStyle}>
+                    Weight:
+                  </Text>
+                  <Text style={styles.typeStyle}>
+                    {this.state.weight} {this.state.weightType}
+                  </Text>
+                </View>
+                <View style={{width: '100%', borderBottomWidth: 1, borderBottomColor: '#FFFFFF', marginTop: width*0.01}}/>
+                <View style={{flexDirection: 'row', justifyContent: 'space-between', width: '100%', paddingHorizontal: width*0.04}}>
+                  <Text style={styles.typeStyle}>
+                    Height:
+                  </Text>
+                  <Text style={styles.typeStyle}>
+                    6.7 ft
+                  </Text>
+                </View>
+                <View style={{width: '100%', borderBottomWidth: 1, borderBottomColor: '#FFFFFF', marginTop: width*0.01}}/>
               </View>
             </View>
           </View>

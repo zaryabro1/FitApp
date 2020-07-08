@@ -25,7 +25,7 @@ export default class Challenges extends Component {
           backgroundColor={'transparent'}
         />
         <Image
-          source={require('../../assets/imageFour.jpg')}
+          source={require('../../assets/imageSeven.jpg')}
           style={styles.splashImage}
         />
         <LinearGradieant

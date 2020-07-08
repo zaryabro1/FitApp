@@ -55,7 +55,7 @@ export default class ExerciseScreen extends Component {
           backgroundColor={'transparent'}
         />
         <Image
-          source={require('../../assets/imageFour.jpg')}
+          source={require('../../assets/imageFourteen.jpg')}
           style={styles.splashImage}
         />
         {/*<NavigationEvents onDidFocus={() => console.log('I am triggered')} />*/}

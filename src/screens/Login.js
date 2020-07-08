@@ -34,7 +34,7 @@ export default class Login extends Component {
             this.props.navigation.navigate('TabNavigation');
             console.warn(this.state.weight);
           }
-        }, 3000);
+        }, 4000);
       } else {
         this.props.navigation.navigate('SetWeight');
         console.warn('hello');
@@ -53,11 +53,11 @@ export default class Login extends Component {
       <View style={styles.container}>
         <StatusBar hidden={true} />
         <Image
-          source={require('../../assets/imageFour.jpg')}
+          source={require('../../assets/imageEleven.jpg')}
           style={styles.splashImage}
         />
         <LinearGradieant
-          colors={['rgba(0, 0, 0, 0.3)', 'rgba(0, 0, 0, 1)']}
+          colors={['rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 1)']}
           style={styles.mainView}>
           <View style={styles.logo}>
             <Text style={styles.logoStyle}>30 Days Challenge</Text>

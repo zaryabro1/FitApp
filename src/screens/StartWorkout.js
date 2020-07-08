@@ -35,7 +35,7 @@ export default class StartWorkout extends Component {
           backgroundColor={'transparent'}
         />
         <Image
-          source={require('../../assets/imageFour.jpg')}
+          source={require('../../assets/imageSixteen.jpg')}
           style={styles.splashImage}
         />
         <LinearGradieant
@@ -53,18 +53,32 @@ export default class StartWorkout extends Component {
                 </Text>
                 <Image
                   source={
-                    (this.props.route.params.itemName[this.state.workoutIndex]
-                      .title == 'Jumping jack' &&
-                      require('../../assets/jumpingjack.gif')) ||
-                    (this.props.route.params.itemName[this.state.workoutIndex]
-                      .title == 'Push Up' &&
-                      require('../../assets/push-ups.gif')) ||
-                    (this.props.route.params.itemName[this.state.workoutIndex]
-                      .title == 'Squat' &&
-                      require('../../assets/squats.gif')) ||
-                    (this.props.route.params.itemName[this.state.workoutIndex]
-                      .title == 'Lunges' &&
-                      require('../../assets/bird-dog.gif'))
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Jumping Jack' &&
+                      require('../../assets/gifs/jumpingjack.gif')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Crunches' &&
+                      require('../../assets/gifs/crunches.gif')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Lunges' &&
+                      require('../../assets/gifs/lunges.gif')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Bird Dog' &&
+                      require('../../assets/gifs/bird-dog.gif')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Mountain Climbing' &&
+                      require('../../assets/gifs/mountain-climbing.gif')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Push Up' &&
+                      require('../../assets/gifs/push-ups.gif')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Squats' &&
+                      require('../../assets/gifs/squats.gif')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Planks' &&
+                      require('../../assets/gifs/plank_f_rgb.jpg')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Stepup Onto Chair' &&
+                      require('../../assets/gifs/step-up-onto-chair.gif')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Butt Bridge' &&
+                      require('../../assets/gifs/butt--brigde.gif')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Reverse Crunches' &&
+                      require('../../assets/gifs/reverse-crunches.gif')) ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Scissors' &&
+                      require('../../assets/gifs/scissors.gif'))  ||
+                    (this.props.route.params.itemName[this.state.workoutIndex].title == 'Triceps Dips' &&
+                      require('../../assets/gifs/tricep-dips.gif'))
                   }
                   style={{
                     width: width * 0.7,

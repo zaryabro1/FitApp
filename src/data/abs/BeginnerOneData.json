@@ -1,10 +1,12 @@
 [
   {
-    "done": false,
-    "day": 1,
-    "exercises": [
+    "done": false, "day": 1,
+    "exercises": [{
+      "title": "Jumping Jack",
+      "quantity": 20
+      },
       {
-        "title": "Jumping jack",
+        "title": "Stepup Onto Chair",
         "quantity": 20
       },
       {
@@ -12,67 +14,53 @@
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Crunches",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Planks",
         "quantity": 20
-      },
-      {
-        "title": "Jumping jack",
-        "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 2,
-    "exercises": [
+    "done": false, "day": 2,
+    "exercises": [{
+      "title": "Jumping Jack",
+      "quantity": 20
+    },
       {
-        "title": "Jumping jack",
+        "title": "Triceps Dips",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Squats",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Bird Dog",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Planks",
         "quantity": 20
-      },
-      {
-        "title": "Jumping jack",
-        "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 3,
-    "exercises": [
+    "done": false, "day": 3,
+    "exercises": [{
+      "title": "Push Up",
+      "quantity": 20
+      },
       {
         "title": "Jumping jack",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Crunches",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Bird Dog",
         "quantity": 20
       },
       {
@@ -80,59 +68,45 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Mountain Climbing",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 4,
-    "exercises": [
+    "done": false, "day": 4,
+    "exercises": [{
+      "title": "Step Onto Chair",
+      "quantity": 20
+      },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Squats",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Scissors",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Reverse Crunches",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 5,
-    "exercises": [
-      {
-        "title": "Jumping jack",
-        "quantity": 20
+    "done": false, "day": 5,
+    "exercises": [{
+      "title": "Jumping Jack",
+      "quantity": 20
       },
       {
-        "title": "Push Up",
-        "quantity": 20
-      },
-      {
-        "title": "Squat",
+        "title": "Crunches",
         "quantity": 20
       },
       {
@@ -140,59 +114,61 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Bird Dog",
+        "quantity": 20
+      },
+      {
+        "title": "Mountain Climbing",
         "quantity": 20
       },
       {
         "title": "Push Up",
         "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 6,
-    "exercises": [
+    "done": false, "day": 6,
+    "exercises": [{
+      "title": "Squats",
+      "quantity": 20
+    },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Stepup Onto Chair",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Reverse Crunches",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Scissors",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 7,
-    "exercises": [
+    "done": false, "day": 7,
+    "exercises": [{
+      "title": "Push Up",
+      "quantity": 20
+      },
       {
         "title": "Jumping jack",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Crunches",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Bird Dog",
         "quantity": 20
       },
       {
@@ -200,59 +176,45 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Mountain Climbing",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 8,
-    "exercises": [
+    "done": false, "day": 8,
+    "exercises": [{
+      "title": "Step Onto Chair",
+      "quantity": 20
+      },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Squats",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Scissors",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Reverse Crunches",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 9,
-    "exercises": [
-      {
-        "title": "Jumping jack",
-        "quantity": 20
+    "done": false, "day": 9,
+    "exercises": [{
+      "title": "Jumping Jack",
+      "quantity": 20
       },
       {
-        "title": "Push Up",
-        "quantity": 20
-      },
-      {
-        "title": "Squat",
+        "title": "Crunches",
         "quantity": 20
       },
       {
@@ -260,59 +222,61 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Bird Dog",
+        "quantity": 20
+      },
+      {
+        "title": "Mountain Climbing",
         "quantity": 20
       },
       {
         "title": "Push Up",
         "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 10,
-    "exercises": [
+    "done": false, "day": 10,
+    "exercises": [{
+      "title": "Squats",
+      "quantity": 20
+    },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Stepup Onto Chair",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Reverse Crunches",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Scissors",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 11,
-    "exercises": [
+    "done": false, "day": 11,
+    "exercises": [{
+      "title": "Push Up",
+      "quantity": 20
+      },
       {
         "title": "Jumping jack",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Crunches",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Bird Dog",
         "quantity": 20
       },
       {
@@ -320,59 +284,45 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Mountain Climbing",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 12,
-    "exercises": [
+    "done": false, "day": 12,
+    "exercises": [{
+      "title": "Step Onto Chair",
+      "quantity": 20
+      },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Squats",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Scissors",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Reverse Crunches",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 13,
-    "exercises": [
-      {
-        "title": "Jumping jack",
-        "quantity": 20
+    "done": false, "day": 13,
+    "exercises": [{
+      "title": "Jumping Jack",
+      "quantity": 20
       },
       {
-        "title": "Push Up",
-        "quantity": 20
-      },
-      {
-        "title": "Squat",
+        "title": "Crunches",
         "quantity": 20
       },
       {
@@ -380,59 +330,61 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Bird Dog",
+        "quantity": 20
+      },
+      {
+        "title": "Mountain Climbing",
         "quantity": 20
       },
       {
         "title": "Push Up",
         "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 14,
-    "exercises": [
+    "done": false, "day": 14,
+    "exercises": [{
+      "title": "Squats",
+      "quantity": 20
+    },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Stepup Onto Chair",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Reverse Crunches",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Scissors",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 15,
-    "exercises": [
+    "done": false, "day": 15,
+    "exercises": [{
+      "title": "Push Up",
+      "quantity": 20
+      },
       {
         "title": "Jumping jack",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Crunches",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Bird Dog",
         "quantity": 20
       },
       {
@@ -440,59 +392,45 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Mountain Climbing",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 16,
-    "exercises": [
+    "done": false, "day": 16,
+    "exercises": [{
+      "title": "Step Onto Chair",
+      "quantity": 20
+      },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Squats",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Scissors",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Reverse Crunches",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 17,
-    "exercises": [
-      {
-        "title": "Jumping jack",
-        "quantity": 20
+    "done": false, "day": 17,
+    "exercises": [{
+      "title": "Jumping Jack",
+      "quantity": 20
       },
       {
-        "title": "Push Up",
-        "quantity": 20
-      },
-      {
-        "title": "Squat",
+        "title": "Crunches",
         "quantity": 20
       },
       {
@@ -500,59 +438,62 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Bird Dog",
+        "quantity": 20
+      },
+      {
+        "title": "Mountain Climbing",
         "quantity": 20
       },
       {
         "title": "Push Up",
         "quantity": 20
-      }
-    ]
+      }]
+
   },
   {
-    "done": false,
-    "day": 18,
-    "exercises": [
+    "done": false, "day": 18,
+    "exercises": [{
+      "title": "Squats",
+      "quantity": 20
+    },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Stepup Onto Chair",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Reverse Crunches",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Scissors",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 19,
-    "exercises": [
+    "done": false, "day": 19,
+    "exercises": [{
+      "title": "Push Up",
+      "quantity": 20
+      },
       {
         "title": "Jumping jack",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Crunches",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Bird Dog",
         "quantity": 20
       },
       {
@@ -560,59 +501,46 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Mountain Climbing",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 20,
-    "exercises": [
+    "done": false, "day": 20,
+    "exercises": [{
+      "title": "Step Onto Chair",
+      "quantity": 20
+      },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Squats",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Scissors",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Reverse Crunches",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
+
   },
   {
-    "done": false,
-    "day": 21,
-    "exercises": [
-      {
-        "title": "Jumping jack",
-        "quantity": 20
+    "done": false, "day": 21,
+    "exercises": [{
+      "title": "Jumping Jack",
+      "quantity": 20
       },
       {
-        "title": "Push Up",
-        "quantity": 20
-      },
-      {
-        "title": "Squat",
+        "title": "Crunches",
         "quantity": 20
       },
       {
@@ -620,59 +548,61 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Bird Dog",
+        "quantity": 20
+      },
+      {
+        "title": "Mountain Climbing",
         "quantity": 20
       },
       {
         "title": "Push Up",
         "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 22,
-    "exercises": [
+    "done": false, "day": 22,
+    "exercises": [{
+      "title": "Squats",
+      "quantity": 20
+    },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Stepup Onto Chair",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Reverse Crunches",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Scissors",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 23,
-    "exercises": [
+    "done": false, "day": 23,
+    "exercises": [{
+      "title": "Push Up",
+      "quantity": 20
+      },
       {
         "title": "Jumping jack",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Crunches",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Bird Dog",
         "quantity": 20
       },
       {
@@ -680,59 +610,45 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Mountain Climbing",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 24,
-    "exercises": [
+    "done": false, "day": 24,
+    "exercises": [{
+      "title": "Step Onto Chair",
+      "quantity": 20
+      },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Squats",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Scissors",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Reverse Crunches",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 25,
-    "exercises": [
-      {
-        "title": "Jumping jack",
-        "quantity": 20
+    "done": false, "day": 25,
+    "exercises": [{
+      "title": "Jumping Jack",
+      "quantity": 20
       },
       {
-        "title": "Push Up",
-        "quantity": 20
-      },
-      {
-        "title": "Squat",
+        "title": "Crunches",
         "quantity": 20
       },
       {
@@ -740,59 +656,61 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Bird Dog",
+        "quantity": 20
+      },
+      {
+        "title": "Mountain Climbing",
         "quantity": 20
       },
       {
         "title": "Push Up",
         "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 26,
-    "exercises": [
+    "done": false, "day": 26,
+    "exercises": [{
+      "title": "Squats",
+      "quantity": 20
+    },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Stepup Onto Chair",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Reverse Crunches",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Scissors",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 27,
-    "exercises": [
+    "done": false, "day": 27,
+    "exercises": [{
+      "title": "Push Up",
+      "quantity": 20
+      },
       {
         "title": "Jumping jack",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Crunches",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Bird Dog",
         "quantity": 20
       },
       {
@@ -800,29 +718,18 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Mountain Climbing",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 28,
-    "exercises": [
-      {
-        "title": "Jumping jack",
-        "quantity": 20
+    "done": false, "day": 28,
+    "exercises": [{
+      "title": "Jumping Jack",
+      "quantity": 20
       },
       {
-        "title": "Push Up",
-        "quantity": 20
-      },
-      {
-        "title": "Squat",
+        "title": "Crunches",
         "quantity": 20
       },
       {
@@ -830,73 +737,70 @@
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Bird Dog",
+        "quantity": 20
+      },
+      {
+        "title": "Mountain Climbing",
         "quantity": 20
       },
       {
         "title": "Push Up",
         "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 29,
-    "exercises": [
+    "done": false, "day": 29,
+    "exercises": [{
+      "title": "Step Onto Chair",
+      "quantity": 20
+      },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Squats",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Scissors",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Reverse Crunches",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   },
   {
-    "done": false,
-    "day": 30,
-    "exercises": [
+    "done": false, "day": 30,
+    "exercises": [{
+      "title": "Squats",
+      "quantity": 20
+    },
       {
-        "title": "Jumping jack",
+        "title": "Planks",
         "quantity": 20
       },
       {
-        "title": "Push Up",
+        "title": "Stepup Onto Chair",
         "quantity": 20
       },
       {
-        "title": "Squat",
+        "title": "Butt Bridge",
         "quantity": 20
       },
       {
-        "title": "Lunges",
+        "title": "Reverse Crunches",
         "quantity": 20
       },
       {
-        "title": "Jumping jack",
+        "title": "Scissors",
         "quantity": 20
-      },
-      {
-        "title": "Push Up",
-        "quantity": 20
-      }
-    ]
+      }]
   }
 ]

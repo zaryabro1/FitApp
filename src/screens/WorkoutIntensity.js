@@ -25,7 +25,7 @@ export default class WorkoutIntensity extends Component {
           backgroundColor={'transparent'}
         />
         <Image
-          source={require('../../assets/imageFour.jpg')}
+          source={require('../../assets/imageSix.jpg')}
           style={styles.splashImage}
         />
         <LinearGradieant

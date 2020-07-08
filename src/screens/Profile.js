@@ -15,7 +15,7 @@ export default class Profile extends Component {
       <View style={styles.container}>
         <StatusBar hidden={false} translucent={true} backgroundColor={'transparent'}/>
         <Image
-          source={require('../../assets/imageFour.jpg')}
+          source={require('../../assets/imageTwo.jpg')}
           style={styles.splashImage}/>
         <LinearGradieant colors={['rgba(0, 0, 0, 0.3)', 'rgba(0, 0, 0, 1)']} style={styles.mainView}>
           <View style={styles.logo}>
