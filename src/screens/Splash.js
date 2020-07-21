@@ -7,7 +7,9 @@ const {width, height} = Dimensions.get('window');
 
 export default class Splash extends Component {
 
-
+  state = {
+    weight: ''
+  }
 
   componentDidMount(): void {
     setTimeout(() => {
@@ -21,9 +23,6 @@ export default class Splash extends Component {
     }, 3000)
   }
 
-  state = {
-    weight: ''
-  }
   render() {
     return (
       <View style={styles.container}>

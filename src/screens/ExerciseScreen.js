@@ -43,7 +43,7 @@ export default class ExerciseScreen extends Component {
       this.props.route.params.level,
     );
     this.setState({data});
-    console.log(data);
+    // console.log(data);
   };
 
   render() {
@@ -79,7 +79,7 @@ export default class ExerciseScreen extends Component {
               numColumns={5}
               renderItem={({item, index}) => {
                 const isDisabled = index !== 0 && !this.state.data[index - 1].done;
-                console.log(item)
+                // console.log(item)
                 return (
                   <Button
                     buttonText={index + 1}
@@ -135,6 +135,7 @@ export default class ExerciseScreen extends Component {
                     }}
                     disabled={isDisabled}
                     onPress={() => {
+                      // console.log(this.props.route.params.title, this.props.route.params.level, item.exercises[0])
                       if(!isDisabled){
                         this.props.navigation.navigate('StartWorkout', {
                           title: this.props.route.params.title,

@@ -75,7 +75,7 @@ const {width, height} = Dimensions.get('window');
               }}
                       onPress={() => {
                         this.setState({goal: 'Loose Weight'});
-                        console.log(this.state.goal);
+                        // console.log(this.state.goal);
                         this.setState({view: 2});
                       }}
               />
@@ -96,7 +96,7 @@ const {width, height} = Dimensions.get('window');
               }}
                       onPress={() => {
                         this.setState({goal: 'Get Toned'});
-                        console.log(this.state.goal);
+                        // console.log(this.state.goal);
                         this.setState({view: 2});
                       }}/>
 
@@ -115,7 +115,7 @@ const {width, height} = Dimensions.get('window');
               }}
                       onPress={() => {
                         this.setState({goal: 'Build Muscle'});
-                        console.log(this.state.goal);
+                        // console.log(this.state.goal);
                         this.setState({view: 2});
                       }}/>
 
@@ -193,7 +193,7 @@ const {width, height} = Dimensions.get('window');
                 }
                 else {
                   this.setState({view: 3});
-                  console.log(`Sex: ${this.state.sex}`);
+                  // console.log(`Sex: ${this.state.sex}`);
                 }
 
               }}>
@@ -509,11 +509,11 @@ const {width, height} = Dimensions.get('window');
                       onPress={() => {
                         this.setState({pushUps: 'Over 40'});
                         alert(JSON.stringify(this.state));
-                        console.log(`Goal: ${this.state.goal}`);
-                        console.log(`Sex: ${this.state.sex}`);
-                        console.log(`climbingFloors: ${this.state.climbingFloors}`);
-                        console.log(`exerciseRate: ${this.state.exerciseRate}`);
-                        console.log(`pushUps: ${this.state.pushUps}`);
+                        // console.log(`Goal: ${this.state.goal}`);
+                        // console.log(`Sex: ${this.state.sex}`);
+                        // console.log(`climbingFloors: ${this.state.climbingFloors}`);
+                        // console.log(`exerciseRate: ${this.state.exerciseRate}`);
+                        // console.log(`pushUps: ${this.state.pushUps}`);
                         this.setState({view: 6});
                         setTimeout(() => {
                           this.setState({view: 7});
