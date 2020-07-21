@@ -32,14 +32,20 @@ export default class StartWorkout extends Component {
 
 
   componentDidMount(): void {
-    console.warn(this.props.route.params.itemName);
-    //
+    // console.warn(this.props.route.params.itemName);
+    
     // _onFinishedPlayingSubscription = SoundPlayer.addEventListener('FinishedPlaying', ({ success }) => {
     //   console.log('finished playing', success)
-    // })
-    // _onFinishedLoadingSubscription = SoundPlayer.addEventListener('FinishedLoading', ({ success }) => {
-    //   console.log('finished loading', success)
-    // })
+		// })
+		
+		// console.log("asdas0");
+    _onFinishedLoadingSubscription = SoundPlayer.addEventListener('FinishedLoading', ({ success }) => {
+      console.log('finished loading', success)
+		})
+
+		//SoundPlayer.playSoundFile('go', 'mp3')
+		
+		// console.log("asdas1");
     // _onFinishedLoadingFileSubscription = SoundPlayer.addEventListener('FinishedLoadingFile', ({ success, name, type }) => {
     //   console.log('finished loading file', success, name, type)
     // })
@@ -48,12 +54,18 @@ export default class StartWorkout extends Component {
     // })
   }
 
-  // componentWillUnmount() {
-  //   _onFinishedPlayingSubscription.remove()
-  //   _onFinishedLoadingSubscription.remove()
-  //   _onFinishedLoadingURLSubscription.remove()
-  //   _onFinishedLoadingFileSubscription.remove()
-  // }
+  componentWillUnmount() {
+    // _onFinishedPlayingSubscription.remove()
+    _onFinishedLoadingSubscription.remove()
+    // _onFinishedLoadingURLSubscription.remove()
+    // _onFinishedLoadingFileSubscription.remove()
+	}
+	
+	palySound = ()=>{
+		if(this.state.toShow == 1){
+			SoundPlayer.playSoundFile('go', 'mp3')
+		}
+	}
 
 
   state = {
@@ -70,6 +82,7 @@ export default class StartWorkout extends Component {
           translucent={true}
           backgroundColor={'transparent'}
         />
+				{this.palySound()}
         <Image
           source={require('../../assets/imageSixteen.jpg')}
           style={styles.splashImage}
