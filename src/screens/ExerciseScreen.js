@@ -23,27 +23,53 @@ const {width, height} = Dimensions.get('window');
 export default class ExerciseScreen extends Component {
   state = {
     data: [],
+    doneCount: 0,
+    percentageDone: 0,
   };
 
   componentDidMount = async () => {
+
     await this.updateData();
     this.unsubscribe = this.props.navigation.addListener('focus', async e => {
       this.setState({data: []});
-      await this.updateData()
+      await this.updateData();
+      // console.warn(this.state.data);
     });
   };
 
   componentWillUnmount(): void {
     this.unsubscribe();
+
   }
 
-  updateData =  async () => {
+  updateData = async () => {
     const data = await GetFitnessByTypeAndChallenge(
       this.props.route.params.title,
       this.props.route.params.level,
     );
-    this.setState({data});
-    // console.log(data);
+    this.setState({data}, this.calculatePercentage);
+  };
+
+  calculatePercentage = () => {
+    let doneCount = 0;
+    const {data} = this.state;
+    for (let i = 0; i < data.length; i++) {
+      // console.warn(data);
+      if (data[i].done) {
+        doneCount++;
+      } else {
+        break;
+      }
+    }
+
+    console.warn(doneCount);
+    // this.setState({doneCount: doneCount})
+    // this.setState({doneCount: doneCount});
+    // console.warn(`${(this.state.doneCount*100)/30}% is done`);
+    this.setState({percentageDone: (doneCount * 100) / 30}, () => {
+      console.warn(this.state.percentageDone);
+    });
+
   };
 
   render() {
@@ -79,6 +105,7 @@ export default class ExerciseScreen extends Component {
               numColumns={5}
               renderItem={({item, index}) => {
                 const isDisabled = index !== 0 && !this.state.data[index - 1].done;
+                // console.warn(index !== 0 && !this.state.data[index - 1].done);
                 // console.log(item)
                 return (
                   <Button
@@ -136,14 +163,18 @@ export default class ExerciseScreen extends Component {
                     disabled={isDisabled}
                     onPress={() => {
                       // console.log(this.props.route.params.title, this.props.route.params.level, item.exercises[0])
-                      if(!isDisabled){
+                      if (!isDisabled) {
                         this.props.navigation.navigate('StartWorkout', {
                           title: this.props.route.params.title,
                           level: this.props.route.params.level,
                           day: index,
                           index: index,
                           itemName: item.exercises,
-                          beforeGoBack: this.updateData
+                          beforeGoBack: this.updateData,
+                          burning: item.burning,
+                          time: item.time,
+
+
                         });
                       }
                     }}
@@ -151,6 +182,48 @@ export default class ExerciseScreen extends Component {
                 );
               }}
             />
+            {this.state.percentageDone != 0 &&
+            <View style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              paddingHorizontal: width * 0.08,
+              borderWidth: 1,
+              borderColor: 'rgba( 255, 255, 255, 0.7)',
+              paddingVertical: width * 0.04,
+              marginBottom: width * 0.04,
+              borderRadius: width*0.03,
+              marginTop: width * 0.04
+            }}>
+              <View style={{flexDirection: 'row', height: width * 0.02, width: width * 0.6}}>
+                <View style={{
+                  width: `${this.state.percentageDone}%`,
+                  height: '100%',
+                  backgroundColor: 'rgba(236,255,85,0.8)',
+                  borderTopLeftRadius: width * 0.2,
+                }}/>
+                <View style={{
+                  width: `${100 - this.state.percentageDone}%`,
+                  height: '100%',
+                  backgroundColor: 'rgba(236,255,85,0.3)',
+                  borderBottomRightRadius: width * 0.2,
+                }}/>
+              </View>
+
+              <Text style={{
+                fontSize: 18,
+                // marginBottom: width * 0.07,
+                fontWeight: '600',
+                color: '#F3D302',
+                // position: 'absolute',
+                // zIndex: 1003,
+                fontFamily: 'JosefinSans-Bold',
+                marginTop: width * 0.04,
+              }}>
+                Completed {parseFloat(this.state.percentageDone.toFixed(1))}%
+              </Text>
+            </View>
+            }
             {/*</ScrollView>*/}
           </View>
         </LinearGradieant>
@@ -208,7 +281,7 @@ const styles = {
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',
-    marginTop: width*0.1,
+    marginTop: width * 0.1,
   },
   typeStyle: {
     fontSize: 18,

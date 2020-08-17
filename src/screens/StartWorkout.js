@@ -23,29 +23,30 @@ let i = 4;
 // }
 
 // const { title } = route.params;
-let _onFinishedPlayingSubscription = null
-let _onFinishedLoadingSubscription = null
-let _onFinishedLoadingFileSubscription = null
-let  _onFinishedLoadingURLSubscription = null
+let _onFinishedPlayingSubscription = null;
+let _onFinishedLoadingSubscription = null;
+let _onFinishedLoadingFileSubscription = null;
+let _onFinishedLoadingURLSubscription = null;
 
 export default class StartWorkout extends Component {
 
 
   componentDidMount(): void {
     // console.warn(this.props.route.params.itemName);
-    
+
     // _onFinishedPlayingSubscription = SoundPlayer.addEventListener('FinishedPlaying', ({ success }) => {
     //   console.log('finished playing', success)
-		// })
-		
-		// console.log("asdas0");
-    _onFinishedLoadingSubscription = SoundPlayer.addEventListener('FinishedLoading', ({ success }) => {
-      console.log('finished loading', success)
-		})
+    // })
 
-		//SoundPlayer.playSoundFile('go', 'mp3')
-		
-		// console.log("asdas1");
+    // console.log("asdas0");
+    _onFinishedLoadingSubscription = SoundPlayer.addEventListener('FinishedLoading', ({success}) => {
+      console.log('finished loading', success);
+      console.warn(data);
+    });
+
+    //SoundPlayer.playSoundFile('go', 'mp3')
+
+    // console.log("asdas1");
     // _onFinishedLoadingFileSubscription = SoundPlayer.addEventListener('FinishedLoadingFile', ({ success, name, type }) => {
     //   console.log('finished loading file', success, name, type)
     // })
@@ -56,16 +57,22 @@ export default class StartWorkout extends Component {
 
   componentWillUnmount() {
     // _onFinishedPlayingSubscription.remove()
-    _onFinishedLoadingSubscription.remove()
+    _onFinishedLoadingSubscription.remove();
     // _onFinishedLoadingURLSubscription.remove()
     // _onFinishedLoadingFileSubscription.remove()
-	}
-	
-	palySound = ()=>{
-		if(this.state.toShow == 1){
-			SoundPlayer.playSoundFile('go', 'mp3')
-		}
-	}
+  }
+
+  palySound = () => {
+    if (this.state.toShow == 1) {
+      SoundPlayer.playSoundFile('go', 'mp3');
+      setTimeout(() => {
+        this.setState({toShow: 3});
+      }, 4500);
+    }
+    if (this.state.toShow == 4) {
+      SoundPlayer.playSoundFile('cheer', 'mp3');
+    }
+  };
 
 
   state = {
@@ -82,100 +89,362 @@ export default class StartWorkout extends Component {
           translucent={true}
           backgroundColor={'transparent'}
         />
-				{this.palySound()}
+        {this.palySound()}
         <Image
-          source={require('../../assets/imageSixteen.jpg')}
+          source={require('../../assets/background/background.png')}
           style={styles.splashImage}
         />
         <LinearGradieant
           colors={['rgba(0, 0, 0, 0.3)', 'rgba(0, 0, 0, 1)']}
           style={styles.mainView}>
-          <View style={styles.logo}>
+          <View style={{
+            // flex: 1,
+            position: 'absolute',
+            justifyContent: (this.state.toShow == 3 || this.state.toShow == 1 || this.state.toShow == 4) ? 'center' : 'flex-start',
+            // justifyContent: this.state.toShow == 3 && 'center',
+            alignItems: 'center',
+            zIndex: 1002,
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}>
             {
-              (this.state.toShow == 1) && (
-              this.state.workoutIndex <
-              this.props.route.params.itemName.length && (
-                <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                  <Text style={styles.logoStyle}>
-                    {
-                      this.props.route.params.itemName[this.state.workoutIndex]
-                        .title
-                    }
-                  </Text>
-                  <Image
-                    source={
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Jumping Jack' &&
-                        require('../../assets/gifs/jumpingjack.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Crunches' &&
-                        require('../../assets/gifs/crunches.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Lunges' &&
-                        require('../../assets/gifs/lunges.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Bird Dog' &&
-                        require('../../assets/gifs/bird-dog.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Mountain Climbing' &&
-                        require('../../assets/gifs/mountain-climbing.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Push Up' &&
-                        require('../../assets/gifs/push-ups.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Squats' &&
-                        require('../../assets/gifs/squats.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Planks' &&
-                        require('../../assets/gifs/plank_f_rgb.jpg')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Stepup Onto Chair' &&
-                        require('../../assets/gifs/step-up-onto-chair.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Butt Bridge' &&
-                        require('../../assets/gifs/butt--brigde.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Reverse Crunches' &&
-                        require('../../assets/gifs/reverse-crunches.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Scissors' &&
-                        require('../../assets/gifs/scissors.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Triceps Dips' &&
-                        require('../../assets/gifs/tricep-dips.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Abdominal Crunches' &&
-                        require('../../assets/gifs/abs/abdominal-crunches.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Sit Ups' &&
-                        require('../../assets/gifs/abs/sit-ups.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Leg Raises' &&
-                        require('../../assets/gifs/abs/leg-raises.gif')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Plank' &&
-                        require('../../assets/gifs/abs/plank_f_rgb.jpg'))
-                    }
-                    style={{
-                      width: width * 0.7,
-                      marginTop: 20,
-                      height: width * 0.4,
-                      resizeMode: 'contain',
+              (this.state.toShow == 3) && (
+                this.state.workoutIndex <
+                this.props.route.params.itemName.length && (
+                  <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                    <Text style={styles.logoStyle}>
+                      {
+                        this.props.route.params.itemName[this.state.workoutIndex]
+                          .title
+                      }
+                    </Text>
+                    <Image
+                      source={
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Jumping Jack' &&
+                          require('../../assets/gifs/jumpingjack.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Crunches' &&
+                          require('../../assets/gifs/crunches.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Lunges' &&
+                          require('../../assets/gifs/lunges.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Bird Dog' &&
+                          require('../../assets/gifs/bird-dog.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Mountain Climbing' &&
+                          require('../../assets/gifs/mountain-climbing.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Push Up' &&
+                          require('../../assets/gifs/push-ups.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Squats' &&
+                          require('../../assets/gifs/squats.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Planks' &&
+                          require('../../assets/gifs/plank_f_rgb.jpg')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Stepup Onto Chair' &&
+                          require('../../assets/gifs/step-up-onto-chair.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Butt Bridge' &&
+                          require('../../assets/gifs/butt--brigde.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Reverse Crunches' &&
+                          require('../../assets/gifs/reverse-crunches.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Scissors' &&
+                          require('../../assets/gifs/scissors.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Triceps Dips' &&
+                          require('../../assets/gifs/tricep-dips.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Abdominal Crunches' &&
+                          require('../../assets/gifs/abs/abdominal-crunches.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Sit Ups' &&
+                          require('../../assets/gifs/abs/sit-ups.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Leg Raises' &&
+                          require('../../assets/gifs/abs/leg-raises.gif')) ||
+                        (this.props.route.params.itemName[this.state.workoutIndex].title == 'Plank' &&
+                          require('../../assets/gifs/abs/plank_f_rgb.jpg'))
+                      }
+                      style={{
+                        width: width*1,
+                        marginTop: 20,
+                        height: width * 0.6,
+                        resizeMode: 'contain',
 
+                      }}
+                    />
+                    <Text style={styles.logoStyle}>
+                      X{
+                        this.props.route.params.itemName[this.state.workoutIndex]
+                          .quantity
+                      }
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: 25,
+                        fontWeight: '600',
+                        color: 'rgba(255,255,255,0.5)',
+                        // position: 'absolute',
+                        // zIndex: 1003,
+                        fontFamily: 'JosefinSans-Italic',
+                        marginVertical: 10,
+                      }}>
+                      Do{' '}
+                      {
+                        this.props.route.params.itemName[this.state.workoutIndex]
+                          .quantity
+                      }{' '}
+                      {
+                        this.props.route.params.itemName[this.state.workoutIndex]
+                          .title
+                      }
+                    </Text>
+                    <TouchableOpacity>
+                      <Button
+                        buttonText={'Next'}
+                        style={{
+                          height: width * 0.2,
+                          width: width * 0.9,
+                          backgroundColor: 'rgba(255,255,255,0.3)',
+                          borderColor: '#F38F17',
+                          borderWidth: width * 0.025,
+                          borderRadius: 10,
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          marginVertical: 10,
+                          marginTop: width*0.04,
+                        }}
+                        onPress={async () => {
+                          // title, level
+                          await SetFitnessStatusTrue(
+                            this.props.route.params.title,
+                            this.props.route.params.level,
+                            this.props.route.params.day,
+                          );
+                          this.setState(
+                            {workoutIndex: this.state.workoutIndex + 1},
+                            async () => {
+                              if (
+                                this.state.workoutIndex ===
+                                this.props.route.params.itemName.length
+                              ) {
+                                // await this.props.route.params.beforeGoBack();
+                                this.setState({toShow: 4});
+                              }
+                            },
+                          );
+                        }}
+                      />
+                    </TouchableOpacity>
+                  </View>
+                ))
+              ||
+              (this.state.toShow == 1) && (
+                <View style={{width: width, alignItems: 'center', justifyContent: 'center', paddingTop: width * 0.15}}>
+                  <Text style={{
+                    fontSize: width*0.2,
+                    // marginBottom: ,
+                    fontWeight: '600',
+                    color: '#F38F17',
+                    // position: 'absolute',
+                    // zIndex: 1003,
+                    fontFamily: 'JosefinSans-Bold',
+                  }}>
+                    Start!
+                  </Text>
+                </View>
+              )
+              ||
+              (this.state.toShow == 4) && (
+                <View style={{
+                  width: width,
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  paddingVertical: width * 0.15,
+                  height: '100%',
+                }}>
+                  <Text style={{
+                    fontSize: width * 0.115,
+                    // marginBottom: ,
+                    fontWeight: '600',
+                    color: '#F38F17',
+                    textAlign: 'center',
+                    // position: 'absolute',
+                    // zIndex: 1003,
+                    fontFamily: 'JosefinSans-Bold',
+                  }}>
+                    Congratulations!
+                  </Text>
+                  <Image source={require('../../assets/doublethumbsup.png')}
+                         style={{
+                           resizeMode: 'contain',
+                           height: width * 0.35,
+                           width: width * 0.55,
+                         }}/>
+                  <Text style={{
+                    fontSize: width * 0.07,
+
+                    color: '#FFFFFF',
+                    // position: 'absolute',
+                    // zIndex: 1003,
+                    fontFamily: 'JosefinSans-regular',
+                  }}>
+                    You are done for the day.
+                  </Text>
+                  <View style={{
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center'}}>
+                    <Image source={require('../../assets/partypopper.png')}
+                           style={{
+                             resizeMode: 'contain',
+                             height: width*0.2,
+                             width: width*0.2
+                           }} />
+                    <Image source={require('../../assets/partypopper.png')}
+                           style={{
+                             resizeMode: 'contain',
+                             height: width*0.2,
+                             width: width*0.2
+                           }} />
+                    <Image source={require('../../assets/partypopper.png')}
+                           style={{
+                             resizeMode: 'contain',
+                             height: width*0.2,
+                             width: width*0.2
+                           }} />
+                  </View>
+                  <Button
+                    buttonText={'DONE'}
+                    style={{
+                      height: width * 0.2,
+                      width: width * 0.9,
+                      backgroundColor: 'rgba(255,255,255,0.3)',
+                      borderColor: '#F38F17',
+                      borderWidth: width * 0.025,
+                      borderRadius: 10,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginVertical: 10,
+                      marginTop: 40,
+                    }}
+                    onPress={() => {
+                      this.props.navigation.goBack();
                     }}
                   />
-                  <Text style={styles.logoStyle}>
-                    {
-                      this.props.route.params.itemName[this.state.workoutIndex]
-                        .quantity
-                    }
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: 25,
+                </View>
+              )
+              ||
+              (this.state.toShow == 2) && (
+                <View style={{width: width, paddingTop: width * 0.07}}>
+                  <View style={{height: width * 0.2, width: width, justifyContent: 'center', alignItems: 'center'}}>
+                    <Text style={{
+                      fontSize: width * 0.09,
+                      // marginBottom: ,
                       fontWeight: '600',
-                      color: 'rgba(255,255,255,0.5)',
+                      color: '#F3D302',
+                      textAlign: 'center',
                       // position: 'absolute',
                       // zIndex: 1003,
-                      fontFamily: 'JosefinSans-Italic',
-                      marginVertical: 10,
+                      fontFamily: 'JosefinSans-Bold',
                     }}>
-                    Do{' '}
-                    {
-                      this.props.route.params.itemName[this.state.workoutIndex]
-                        .quantity
-                    }{' '}
-                    {
-                      this.props.route.params.itemName[this.state.workoutIndex]
-                        .title
-                    }
-                  </Text>
-                  <TouchableOpacity>
+                      Get Ready!
+                    </Text>
+                  </View>
+                  <View style={{flexDirection: 'row', width: width, justifyContent: 'space-around'}}>
+                    <Text style={{
+                      fontSize: width * 0.05,
+                      fontFamily: 'JosefinSans-Bold',
+                      color: 'rgba(255, 255, 255, 0.8)',
+
+                      marginLeft: width * 0.05,
+                    }}>{this.props.route.params.burning}</Text>
+
+                    <Text style={{
+                      fontSize: width * 0.05,
+                      fontFamily: 'JosefinSans-Bold',
+                      color: 'rgba(255, 255, 255, 0.8)',
+
+                      marginLeft: width * 0.05,
+                    }}>{this.props.route.params.time}</Text>
+
+                    <Text style={{
+                      fontSize: width * 0.05,
+                      fontFamily: 'JosefinSans-Bold',
+                      color: 'rgba(255, 255, 255, 0.8)',
+
+                      marginLeft: width * 0.05,
+                    }}>{this.props.route.params.level}</Text>
+                  </View>
+                  {/*<View style={{backgroundColor: 'transparent', flex: 1}}>*/}
+                  <FlatList contentContainerStyle={{paddingBottom: 20, height: width * 1.05}}
+                            data={this.props.route.params.itemName}
+                            keyExtractor={(item, index) => {
+                              index.toString();
+                            }}
+                            renderItem={({item, index}) => {
+                              console.warn(this.props.route.params.time);
+                              // console.warn(item);
+                              // console.warn(index);.
+                              // console.warn("FlatList entered");
+                              return (
+                                <View style={{
+                                  width: width,
+                                  alignItems: 'center',
+                                  height: width * 0.19,
+                                  flexDirection: 'row',
+                                  paddingTop: width * 0.15,
+                                  paddingLeft: width * 0.03,
+
+                                }}>
+                                  <Image style={{width: width * 0.15, height: width * 0.15}} source={
+                                    (item.title == 'Jumping Jack' &&
+                                      require('../../assets/gifs/jumpingjack.gif')) ||
+                                    (item.title == 'Crunches' &&
+                                      require('../../assets/gifs/crunches.gif')) ||
+                                    (item.title == 'Lunges' &&
+                                      require('../../assets/gifs/lunges.gif')) ||
+                                    (item.title == 'Bird Dog' &&
+                                      require('../../assets/gifs/bird-dog.gif')) ||
+                                    (item.title == 'Mountain Climbing' &&
+                                      require('../../assets/gifs/mountain-climbing.gif')) ||
+                                    (item.title == 'Push Up' &&
+                                      require('../../assets/gifs/push-ups.gif')) ||
+                                    (item.title == 'Squats' &&
+                                      require('../../assets/gifs/squats.gif')) ||
+                                    (item.title == 'Planks' &&
+                                      require('../../assets/gifs/plank_f_rgb.jpg')) ||
+                                    (item.title == 'Stepup Onto Chair' &&
+                                      require('../../assets/gifs/step-up-onto-chair.gif')) ||
+                                    (item.title == 'Butt Bridge' &&
+                                      require('../../assets/gifs/butt--brigde.gif')) ||
+                                    (item.title == 'Reverse Crunches' &&
+                                      require('../../assets/gifs/reverse-crunches.gif')) ||
+                                    (item.title == 'Scissors' &&
+                                      require('../../assets/gifs/scissors.gif')) ||
+                                    (item.title == 'Triceps Dips' &&
+                                      require('../../assets/gifs/tricep-dips.gif')) ||
+                                    (item.title == 'Abdominal Crunches' &&
+                                      require('../../assets/gifs/abs/abdominal-crunches.gif')) ||
+                                    (item.title == 'Sit Ups' &&
+                                      require('../../assets/gifs/abs/sit-ups.gif')) ||
+                                    (item.title == 'Leg Raises' &&
+                                      require('../../assets/gifs/abs/leg-raises.gif')) ||
+                                    (item.title == 'Plank' &&
+                                      require('../../assets/gifs/abs/plank_f_rgb.jpg'))
+                                  }/>
+
+                                  <Text style={{
+                                    fontSize: width * 0.05,
+                                    fontFamily: 'JosefinSans',
+                                    color: 'rgba(255, 255, 255, 0.8)',
+                                    marginLeft: width * 0.05,
+                                  }}>{item.title}</Text>
+                                </View>
+                              );
+                            }}/>
+                  {/*</View>*/}
+                  <View style={{
+                    width: width,
+                    height: width * 0.2,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginBottom: width * 0.5,
+                  }}>
                     <Button
-                      buttonText={'Next'}
+                      buttonText={'START'}
                       style={{
                         height: width * 0.14,
                         width: width * 0.9,
@@ -221,171 +490,26 @@ export default class StartWorkout extends Component {
                         borderRadius: 10,
                         justifyContent: 'center',
                         alignItems: 'center',
-                        marginVertical: 10,
-                        marginTop: 40,
+                        marginBottom: width * 0.1,
+                        marginTop: width * 0.03,
                       }}
                       onPress={async () => {
                         // title, level
-                        await SetFitnessStatusTrue(
-                          this.props.route.params.title,
-                          this.props.route.params.level,
-                          this.props.route.params.day,
-                        );
-                        this.setState(
-                          {workoutIndex: this.state.workoutIndex + 1},
-                          async () => {
-                            if (
-                              this.state.workoutIndex ===
-                              this.props.route.params.itemName.length
-                            ) {
-                              // await this.props.route.params.beforeGoBack();
-                              this.props.navigation.goBack();
-                            }
-                          },
-                        );
+                        this.setState({toShow: 1});
+                        //SoundPlayer.playSoundFile('go', 'mp3')
+                        // try {
+                        //   // play the file tone.mp3
+                        //   SoundPlayer.playSoundFile('go', 'mp3')
+                        //   // or play from url
+                        //  // SoundPlayer.playUrl('https://example.com/music.mp3')
+                        // } catch (e) {
+                        //   console.log(`cannot play the sound file`, e)
+                        // }
                       }}
                     />
-                  </TouchableOpacity>
+                  </View>
                 </View>
-              ))
-            ||
-            (this.state.toShow == 2) && (
-              <View style={{width: width, alignItems: 'center', justifyContent: 'center', paddingTop: width*0.15}}>
-                <Text style={{
-                  fontSize: 40,
-                  // marginBottom: ,
-                  fontWeight: '600',
-                  color: '#F3D302',
-                  // position: 'absolute',
-                  // zIndex: 1003,
-                  fontFamily: 'JosefinSans-Bold',
-                }}>
-                 Get Ready!
-                </Text>
-                <FlatList data={this.props.route.params.itemName} keyExtractor={(item, index) => {
-                  index.toString();
-                }} renderItem={({item, index}) => {
-                  // console.warn(item);
-                  // console.warn(index);.
-                  // console.warn("FlatList entered");
-                  return (
-                    <View style={{
-                      width: width,
-                      alignItems: 'center',
-                      height: width * 0.25,
-                      flexDirection: 'row',
-                      paddingTop: width*0.15,
-                      paddingLeft: width*0.03
-
-                    }}>
-                      <Image style={{width: width*0.15, height: width*0.15}} source={
-                        (item.title == 'Jumping Jack' &&
-                          require('../../assets/gifs/jumpingjack.gif')) ||
-                        (item.title == 'Crunches' &&
-                          require('../../assets/gifs/crunches.gif')) ||
-                        (item.title == 'Lunges' &&
-                          require('../../assets/gifs/lunges.gif')) ||
-                        (item.title == 'Bird Dog' &&
-                          require('../../assets/gifs/bird-dog.gif')) ||
-                        (item.title == 'Mountain Climbing' &&
-                          require('../../assets/gifs/mountain-climbing.gif')) ||
-                        (item.title == 'Push Up' &&
-                          require('../../assets/gifs/push-ups.gif')) ||
-                        (item.title == 'Squats' &&
-                          require('../../assets/gifs/squats.gif')) ||
-                        (item.title == 'Planks' &&
-                          require('../../assets/gifs/plank_f_rgb.jpg')) ||
-                        (item.title == 'Stepup Onto Chair' &&
-                          require('../../assets/gifs/step-up-onto-chair.gif')) ||
-                        (item.title == 'Butt Bridge' &&
-                          require('../../assets/gifs/butt--brigde.gif')) ||
-                        (item.title == 'Reverse Crunches' &&
-                          require('../../assets/gifs/reverse-crunches.gif')) ||
-                        (item.title == 'Scissors' &&
-                          require('../../assets/gifs/scissors.gif')) ||
-                        (item.title == 'Triceps Dips' &&
-                          require('../../assets/gifs/tricep-dips.gif')) ||
-                        (item.title == 'Abdominal Crunches' &&
-                          require('../../assets/gifs/abs/abdominal-crunches.gif')) ||
-                        (item.title == 'Sit Ups' &&
-                          require('../../assets/gifs/abs/sit-ups.gif')) ||
-                        (item.title == 'Leg Raises' &&
-                          require('../../assets/gifs/abs/leg-raises.gif')) ||
-                        (item.title == 'Plank' &&
-                          require('../../assets/gifs/abs/plank_f_rgb.jpg'))
-                      }/>
-
-                      <Text style={{fontSize: 30, fontFamily: 'JosefinSans-Bold', color: 'rgba(255, 255, 255, 0.8)', marginLeft: width*0.05}}>{item.title}</Text>
-                    </View>
-                  );
-                }}/>
-
-                <Button
-                  buttonText={'START'}
-                  style={{
-                    height: width * 0.14,
-                    width: width * 0.9,
-                    backgroundColor:
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.beginner1 &&
-                        'rgba(41, 241, 195, 0.3)') ||
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.beginner2 &&
-                        'rgba(41, 241, 195, 0.3)') ||
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.intermediate1 &&
-                        'rgba(236,255,85, 0.3)') ||
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.intermediate2 &&
-                        'rgba(236,255,85, 0.3)') ||
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.professional1 &&
-                        'rgba(255,75,114, 0.3)') ||
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.professional2 &&
-                        'rgba(255,75,114, 0.3)'),
-                    borderColor:
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.beginner1 &&
-                        'rgba(41, 241, 195, 0.7)') ||
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.beginner2 &&
-                        'rgba(41, 241, 195, 0.7)') ||
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.intermediate1 &&
-                        'rgba(236,255,85,0.7)') ||
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.intermediate2 &&
-                        'rgba(236,255,85,0.7)') ||
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.professional1 &&
-                        'rgba(255,75,114,0.7)') ||
-                      (this.props.route.params.level ===
-                        CHALLENGE_LEVEL.professional2 &&
-                        'rgba(255,75,114,0.7)'),
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    marginBottom: width*0.07,
-                    marginTop: width*0.03
-                  }}
-                  onPress={async () => {
-                    // title, level
-                    this.setState({toShow: 1});
-                    //SoundPlayer.playSoundFile('go', 'mp3')
-                    // try {
-                    //   // play the file tone.mp3
-                    //   SoundPlayer.playSoundFile('go', 'mp3')
-                    //   // or play from url
-                    //  // SoundPlayer.playUrl('https://example.com/music.mp3')
-                    // } catch (e) {
-                    //   console.log(`cannot play the sound file`, e)
-                    // }
-                  }}
-                />
-              </View>
-            )}
+              )}
 
             {/*{*/}
             {/*  this.props.route.params.index == 0*/}
@@ -439,7 +563,7 @@ const styles = {
   logo: {
     // flex: 1,
     position: 'absolute',
-    justifyContent: 'center',
+    // justifyContent: this.state.toShow == 3 && 'center',
     alignItems: 'center',
     zIndex: 1002,
     top: 0,
@@ -454,7 +578,7 @@ const styles = {
     fontSize: 40,
     // marginBottom: ,
     fontWeight: '600',
-    color: '#F3D302',
+    color: '#F38F17',
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',
@@ -464,7 +588,7 @@ const styles = {
     fontSize: 18,
     // marginBottom: ,
     fontWeight: '600',
-    color: '#F3D302',
+    color: '#F38F17',
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',

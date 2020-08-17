@@ -7,6 +7,7 @@ import {
   Dimensions,
   TouchableOpacity,
   ScrollView,
+  ImageBackground
 } from 'react-native';
 import Textfield from '../components/Textfield';
 import Button from '../components/Button';
@@ -16,6 +17,11 @@ import {WORKOUT_TYPE} from '../system/FitnessSystem';
 const {width, height} = Dimensions.get('window');
 
 export default class Challenges extends Component {
+
+  componentDidMount(): void {
+    console.warn(WORKOUT_TYPE.arms);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -25,7 +31,7 @@ export default class Challenges extends Component {
           backgroundColor={'transparent'}
         />
         <Image
-          source={require('../../assets/imageSeven.jpg')}
+          source={require('../../assets/background/background.png')}
           style={styles.splashImage}
         />
         <LinearGradieant
@@ -34,110 +40,305 @@ export default class Challenges extends Component {
           <View style={styles.logo}>
             <Text style={styles.logoStyle}>Challenges</Text>
             <ScrollView>
-              <Button
-                buttonText={WORKOUT_TYPE.fullBody}
-                style={{
-                  height: width * 0.25,
-                  width: width * 0.9,
-                  backgroundColor: 'rgba(255,255,255,0.5)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
-                  borderRadius: 10,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 10,
-                }}
-                onPress={() => {
-                  this.props.navigation.navigate('WorkoutIntensity', {
-                    title: WORKOUT_TYPE.fullBody,
-                  });
-                }}
-              />
+              <TouchableOpacity style={{
+                marginVertical: width*0.02,
+                marginTop: width*0.07
+              }} onPress={() => {
+                this.props.navigation.navigate('WorkoutIntensity', {
+                  title: WORKOUT_TYPE.fullBody,
+                });
+              }}>
+                <ImageBackground source={require('../../assets/background/fullbody.png')}
+                                 style={{
+                                   resizeMode: 'cover',
+                                   height: width*0.3,
+                                   width: width *0.9,
+                                 }}
+                                 imageStyle={{
+                                   borderRadius: 10
+                                 }}>
+                  <View style={{
+                    height: '100%',
+                    width: '100%',
+                    // backgroundColor: 'rgba(255,255,255,0.5)',
+                    borderColor: 'rgba(255,255,255,0.7)',
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    justifyContent: 'center',
+                    // alignItems: 'center',
+                    // marginVertical: 10,
+                    paddingLeft: width*0.07
+                    // marginTop: 10,
+                  }}>
+                    <Text style={{
+                      color: "#FFFFFF",
+                      fontFamily: 'JosefinSans-Regular',
+                      fontSize: width*0.06,
+                      // textAlign: 'center'
+                    }}>{WORKOUT_TYPE.fullBody}</Text>
+                  </View>
+                </ImageBackground>
+              </TouchableOpacity>
+              {/*<Button*/}
+              {/*  buttonText={WORKOUT_TYPE.fullBody}*/}
+              {/*  style={{*/}
+              {/*    height: width * 0.25,*/}
+              {/*    width: width * 0.9,*/}
+              {/*    backgroundColor: 'rgba(255,255,255,0.5)',*/}
+              {/*    borderColor: 'rgba(255,255,255,0.7)',*/}
+              {/*    borderWidth: 1,*/}
+              {/*    borderRadius: 10,*/}
+              {/*    justifyContent: 'center',*/}
+              {/*    alignItems: 'center',*/}
+              {/*    marginVertical: 10,*/}
+              {/*    marginTop: 10,*/}
+              {/*  }}*/}
+              {/*  onPress={() => {*/}
+              {/*    this.props.navigation.navigate('WorkoutIntensity', {*/}
+              {/*      title: WORKOUT_TYPE.fullBody,*/}
+              {/*    });*/}
+              {/*  }}*/}
+              {/*/>*/}
 
-              <Button
-                buttonText={WORKOUT_TYPE.abs}
-                style={{
-                  height: width * 0.25,
-                  width: width * 0.9,
-                  backgroundColor: 'rgba(255,255,255,0.5)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
-                  borderRadius: 10,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 10,
-                }}
-                onPress={() => {
-                  this.props.navigation.navigate('WorkoutIntensity', {
-                    title: WORKOUT_TYPE.abs,
-                  });
-                }}
-              />
+              <TouchableOpacity style={{
+                marginVertical: width*0.02
+              }} onPress={() => {
+                this.props.navigation.navigate('WorkoutIntensity', {
+                  title: WORKOUT_TYPE.fullBody,
+                });
+              }}>
+                <ImageBackground source={require('../../assets/background/abs.png')}
+                                 style={{
+                                   resizeMode: 'cover',
+                                   height: width*0.3,
+                                   width: width *0.9,
+                                 }}
+                                 imageStyle={{
+                                   borderRadius: 10
+                                 }}>
+                  <View style={{
+                    height: '100%',
+                    width: '100%',
+                    // backgroundColor: 'rgba(255,255,255,0.5)',
+                    borderColor: 'rgba(255,255,255,0.7)',
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    justifyContent: 'center',
+                    // alignItems: 'center',
+                    // marginVertical: 10,
+                    paddingLeft: width*0.07
+                    // marginTop: 10,
+                  }}>
+                    <Text style={{
+                      color: "#FFFFFF",
+                      fontFamily: 'JosefinSans-Regular',
+                      fontSize: width*0.06,
+                      // textAlign: 'center'
+                    }}>{WORKOUT_TYPE.abs}</Text>
+                  </View>
+                </ImageBackground>
+              </TouchableOpacity>
 
-              <Button
-                buttonText={WORKOUT_TYPE.butt}
-                style={{
-                  height: width * 0.25,
-                  width: width * 0.9,
-                  backgroundColor: 'rgba(255,255,255,0.5)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
-                  borderRadius: 10,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 10,
-                }}
-                onPress={() => {
-                  this.props.navigation.navigate('WorkoutIntensity', {
-                    title: WORKOUT_TYPE.butt,
-                  });
-                }}
-              />
+              {/*<Button*/}
+              {/*  buttonText={WORKOUT_TYPE.abs}*/}
+              {/*  style={{*/}
+              {/*    height: width * 0.25,*/}
+              {/*    width: width * 0.9,*/}
+              {/*    backgroundColor: 'rgba(255,255,255,0.5)',*/}
+              {/*    borderColor: 'rgba(255,255,255,0.7)',*/}
+              {/*    borderWidth: 1,*/}
+              {/*    borderRadius: 10,*/}
+              {/*    justifyContent: 'center',*/}
+              {/*    alignItems: 'center',*/}
+              {/*    marginVertical: 10,*/}
+              {/*    marginTop: 10,*/}
+              {/*  }}*/}
+              {/*  onPress={() => {*/}
+              {/*    this.props.navigation.navigate('WorkoutIntensity', {*/}
+              {/*      title: WORKOUT_TYPE.abs,*/}
+              {/*    });*/}
+              {/*  }}*/}
+              {/*/>*/}
 
-              <Button
-                buttonText={WORKOUT_TYPE.arms}
-                style={{
-                  height: width * 0.25,
-                  width: width * 0.9,
-                  backgroundColor: 'rgba(255,255,255,0.5)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
-                  borderRadius: 10,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 10,
-                }}
-                onPress={() => {
-                  this.props.navigation.navigate('WorkoutIntensity', {
-                    title: WORKOUT_TYPE.arms,
-                  });
-                }}
-              />
+              <TouchableOpacity style={{
+                marginVertical: width*0.02
+              }} onPress={() => {
+                this.props.navigation.navigate('WorkoutIntensity', {
+                  title: WORKOUT_TYPE.fullBody,
+                });
+              }}>
+                <ImageBackground source={require('../../assets/background/butt.png')}
+                                 style={{
+                                   resizeMode: 'cover',
+                                   height: width*0.3,
+                                   width: width *0.9,
+                                 }}
+                                 imageStyle={{
+                                   borderRadius: 10
+                                 }}>
+                  <View style={{
+                    height: '100%',
+                    width: '100%',
+                    // backgroundColor: 'red',
+                    borderColor: 'rgba(255,255,255,0.7)',
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    justifyContent: 'center',
+                    paddingLeft: width*0.07
+                    // alignItems: 'center',
+                    // marginVertical: 10,
+                    // marginTop: 10,
+                  }}>
+                    <Text style={{
+                      color: "#FFFFFF",
+                      fontFamily: 'JosefinSans-Regular',
+                      fontSize: width*0.06,
+                      // textAlign: 'center'
+                    }}>{WORKOUT_TYPE.butt}</Text>
+                  </View>
+                </ImageBackground>
+              </TouchableOpacity>
 
-              <Button
-                buttonText={WORKOUT_TYPE.legs}
-                style={{
-                  height: width * 0.25,
-                  width: width * 0.9,
-                  backgroundColor: 'rgba(255,255,255,0.5)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
-                  borderRadius: 10,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 10,
-                }}
-                onPress={() => {
-                  this.props.navigation.navigate('WorkoutIntensity', {
-                    title: WORKOUT_TYPE.legs,
-                  });
-                }}
-              />
+              {/*<Button*/}
+              {/*  buttonText={WORKOUT_TYPE.butt}*/}
+              {/*  style={{*/}
+              {/*    height: width * 0.25,*/}
+              {/*    width: width * 0.9,*/}
+              {/*    backgroundColor: 'rgba(255,255,255,0.5)',*/}
+              {/*    borderColor: 'rgba(255,255,255,0.7)',*/}
+              {/*    borderWidth: 1,*/}
+              {/*    borderRadius: 10,*/}
+              {/*    justifyContent: 'center',*/}
+              {/*    alignItems: 'center',*/}
+              {/*    marginVertical: 10,*/}
+              {/*    marginTop: 10,*/}
+              {/*  }}*/}
+              {/*  onPress={() => {*/}
+              {/*    this.props.navigation.navigate('WorkoutIntensity', {*/}
+              {/*      title: WORKOUT_TYPE.butt,*/}
+              {/*    });*/}
+              {/*  }}*/}
+              {/*/>*/}
+
+              <TouchableOpacity style={{
+                marginVertical: width*0.02
+              }} onPress={() => {
+                this.props.navigation.navigate('WorkoutIntensity', {
+                  title: WORKOUT_TYPE.fullBody,
+                });
+              }}>
+                <ImageBackground source={require('../../assets/background/arms.png')}
+                                 style={{
+                                   resizeMode: 'cover',
+                                   height: width*0.3,
+                                   width: width *0.9,
+                                 }}
+                                 imageStyle={{
+                                   borderRadius: 10
+                                 }}>
+                  <View style={{
+                    height: '100%',
+                    width: '100%',
+                    // backgroundColor: 'rgba(255,255,255,0.5)',
+                    borderColor: 'rgba(255,255,255,0.7)',
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    justifyContent: 'center',
+                    // alignItems: 'center',
+                    // marginVertical: 10,
+                    paddingLeft: width*0.07
+                    // marginTop: 10,
+                  }}>
+                    <Text style={{
+                      color: "#FFFFFF",
+                      fontFamily: 'JosefinSans-Regular',
+                      fontSize: width*0.06,
+                      // textA/lign: 'center'
+                    }}>{WORKOUT_TYPE.arms}</Text>
+                  </View>
+                </ImageBackground>
+              </TouchableOpacity>
+
+              {/*<Button*/}
+              {/*  buttonText={WORKOUT_TYPE.arms}*/}
+              {/*  style={{*/}
+              {/*    height: width * 0.25,*/}
+              {/*    width: width * 0.9,*/}
+              {/*    backgroundColor: 'rgba(255,255,255,0.5)',*/}
+              {/*    borderColor: 'rgba(255,255,255,0.7)',*/}
+              {/*    borderWidth: 1,*/}
+              {/*    borderRadius: 10,*/}
+              {/*    justifyContent: 'center',*/}
+              {/*    alignItems: 'center',*/}
+              {/*    marginVertical: 10,*/}
+              {/*    marginTop: 10,*/}
+              {/*  }}*/}
+              {/*  onPress={() => {*/}
+              {/*    this.props.navigation.navigate('WorkoutIntensity', {*/}
+              {/*      title: WORKOUT_TYPE.arms,*/}
+              {/*    });*/}
+              {/*  }}*/}
+              {/*/>*/}
+
+              <TouchableOpacity style={{
+                marginVertical: width*0.02
+              }} onPress={() => {
+                this.props.navigation.navigate('WorkoutIntensity', {
+                  title: WORKOUT_TYPE.fullBody,
+                });
+              }}>
+                <ImageBackground source={require('../../assets/background/legs.png')}
+                                 style={{
+                                   resizeMode: 'cover',
+                                   height: width*0.3,
+                                   width: width *0.9,
+                                 }}
+                                 imageStyle={{
+                                   borderRadius: 10
+                                 }}>
+                  <View style={{
+                    height: '100%',
+                    width: '100%',
+                    // backgroundColor: 'rgba(255,255,255,0.5)',
+                    borderColor: 'rgba(255,255,255,0.7)',
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    justifyContent: 'center',
+                    // alignItems: 'center',
+                    // marginVertical: 10,
+                    paddingLeft: width*0.07
+                    // marginTop: 10,
+                  }}>
+                    <Text style={{
+                      color: "#FFFFFF",
+                      fontFamily: 'JosefinSans-Regular',
+                      fontSize: width*0.06,
+                      // textAlign: 'center'
+                    }}>{WORKOUT_TYPE.legs}</Text>
+                  </View>
+                </ImageBackground>
+              </TouchableOpacity>
+
+              {/*<Button*/}
+              {/*  buttonText={WORKOUT_TYPE.legs}*/}
+              {/*  style={{*/}
+              {/*    height: width * 0.25,*/}
+              {/*    width: width * 0.9,*/}
+              {/*    backgroundColor: 'rgba(255,255,255,0.5)',*/}
+              {/*    borderColor: 'rgba(255,255,255,0.7)',*/}
+              {/*    borderWidth: 1,*/}
+              {/*    borderRadius: 10,*/}
+              {/*    justifyContent: 'center',*/}
+              {/*    alignItems: 'center',*/}
+              {/*    marginVertical: 10,*/}
+              {/*    marginTop: 10,*/}
+              {/*  }}*/}
+              {/*  onPress={() => {*/}
+              {/*    this.props.navigation.navigate('WorkoutIntensity', {*/}
+              {/*      title: WORKOUT_TYPE.legs,*/}
+              {/*    });*/}
+              {/*  }}*/}
+              {/*/>*/}
             </ScrollView>
           </View>
         </LinearGradieant>
@@ -153,6 +354,7 @@ export default class Challenges extends Component {
 const styles = {
   container: {
     flex: 1,
+    backgroundColor: '#000000'
   },
   splashImage: {
     resizeMode: 'cover',

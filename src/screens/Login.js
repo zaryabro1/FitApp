@@ -113,7 +113,7 @@ const styles = {
     fontSize: 40,
     // marginBottom: ,
     fontWeight: '600',
-    color: '#F3D302',
+    color: '#F38F17',
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',

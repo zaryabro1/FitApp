@@ -46,7 +46,7 @@ class Plan extends Component {
           backgroundColor={'transparent'}
         />
         <Image
-          source={require('../../assets/imageFour.jpg')}
+          source={require('../../assets/background/background.png')}
           style={styles.splashImage}
         />
         <LinearGradieant
@@ -70,11 +70,11 @@ class Plan extends Component {
               <Button
                 buttonText={'LOSE WEIGHT'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -91,11 +91,11 @@ class Plan extends Component {
               <Button
                 buttonText={'GET TONED'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -112,11 +112,11 @@ class Plan extends Component {
               <Button
                 buttonText={'BUILD MUSCLE'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -143,6 +143,7 @@ class Plan extends Component {
                   color: 'rgba(255,255,255,0.5)',
                   // position: 'absolute',
                   // zIndex: 1003,
+                  textAlign: 'center',
                   fontFamily: 'JosefinSans-Bold',
                 }}>
                 Let us know you better to help boost your workout results
@@ -151,7 +152,7 @@ class Plan extends Component {
               <Button
                 buttonText={'Male'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor:
                     this.state.sex == 'male'
@@ -160,8 +161,8 @@ class Plan extends Component {
                   borderColor:
                     this.state.sex == 'male'
                       ? 'rgba(41, 241, 195, 0.7)'
-                      : 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                      : '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -180,7 +181,7 @@ class Plan extends Component {
               <Button
                 buttonText={'Female'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor:
                     this.state.sex == 'female'
@@ -189,8 +190,8 @@ class Plan extends Component {
                   borderColor:
                     this.state.sex == 'female'
                       ? 'rgba(41, 241, 195, 0.7)'
-                      : 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                      : '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -209,7 +210,7 @@ class Plan extends Component {
                 onPress={() => {
                   if (this.state.sex == '') {
                     alert('Please select Male or Female');
-                    alert(JSON.stringify(this.state));
+                    // alert(JSON.stringify(this.state));
                   } else {
                     this.setState({view: 3});
                     // console.log(`Sex: ${this.state.sex}`);
@@ -245,12 +246,24 @@ class Plan extends Component {
           )}
 
           {this.state.view == 3 && (
-            <View style={styles.logo}>
+            <View style={{
+              // flex: 1,
+              position: 'absolute',
+              justifyContent: 'center',
+              alignItems: 'center',
+              zIndex: 1002,
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              paddingVertical: width*0.4,
+              // paddingBottom: width*0.27
+            }}>
               <Text
                 style={{
                   fontSize: 30,
                   fontWeight: '600',
-                  color: '#F3D302',
+                  color: '#F38F17',
                   marginLeft: 30,
                   fontFamily: 'JosefinSans-Bold',
                 }}>
@@ -260,17 +273,16 @@ class Plan extends Component {
               <Button
                 buttonText={'HARDLY'}
                 style={{
-                  height: width * 0.15,
-
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({exerciseRate: 'Hardly'});
@@ -281,16 +293,16 @@ class Plan extends Component {
               <Button
                 buttonText={'SOMETIMES'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({exerciseRate: 'Sometimes'});
@@ -301,16 +313,16 @@ class Plan extends Component {
               <Button
                 buttonText={'2-3 TIMES A WEEK'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({exerciseRate: '2-3 Times A Week'});
@@ -321,16 +333,16 @@ class Plan extends Component {
               <Button
                 buttonText={'OVER 4 TIMES A WEEK'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({exerciseRate: 'Over 4 Times A Week'});
@@ -345,7 +357,7 @@ class Plan extends Component {
                 style={{
                   fontSize: 30,
                   fontWeight: '600',
-                  color: '#F3D302',
+                  color: '#F38F17',
                   marginLeft: 50,
                   fontFamily: 'JosefinSans-Bold',
                 }}>
@@ -355,16 +367,16 @@ class Plan extends Component {
               <Button
                 buttonText={'SHORTNESS OF BREATH'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({climbingFloors: 'Shortness of Breath'});
@@ -375,16 +387,16 @@ class Plan extends Component {
               <Button
                 buttonText={'A LITTLE TIRED'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({climbingFloors: 'A Little Tired'});
@@ -395,16 +407,16 @@ class Plan extends Component {
               <Button
                 buttonText={'EASY'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({climbingFloors: 'Easy'});
@@ -415,16 +427,16 @@ class Plan extends Component {
               <Button
                 buttonText={'I CAN RUN UP THERE'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({climbingFloors: 'I Can Run Up There'});
@@ -440,7 +452,7 @@ class Plan extends Component {
                 style={{
                   fontSize: 30,
                   fontWeight: '600',
-                  color: '#F3D302',
+                  color: '#F38F17',
                   marginLeft: 40,
                   fontFamily: 'JosefinSans-Bold',
                 }}>
@@ -450,16 +462,16 @@ class Plan extends Component {
               <Button
                 buttonText={'LESS THAN 10'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({pushUps: 'Less Than 10'});
@@ -473,16 +485,16 @@ class Plan extends Component {
               <Button
                 buttonText={'10-20'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({pushUps: '10-20'});
@@ -496,16 +508,16 @@ class Plan extends Component {
               <Button
                 buttonText={'21-40'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({pushUps: '21-40'});
@@ -519,16 +531,16 @@ class Plan extends Component {
               <Button
                 buttonText={'OVER 40'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginVertical: 10,
-                  marginTop: 30,
+                  marginVertical: 1,
+                  marginTop: width*0.07,
                 }}
                 onPress={() => {
                   this.setState({pushUps: 'Over 40'});
@@ -553,7 +565,7 @@ class Plan extends Component {
                 style={{
                   fontSize: 30,
                   fontWeight: '600',
-                  color: '#F3D302',
+                  color: '#F38F17',
                   marginLeft: 60,
                   fontFamily: 'JosefinSans-Bold',
                 }}>
@@ -568,7 +580,7 @@ class Plan extends Component {
                 style={{
                   fontSize: 30,
                   fontWeight: '600',
-                  color: '#F3D302',
+                  color: '#F38F17',
                   marginLeft: 10,
                   fontFamily: 'JosefinSans-Bold',
                 }}>
@@ -578,16 +590,16 @@ class Plan extends Component {
               <Button
                 buttonText={'OKAY'}
                 style={{
-                  height: width * 0.15,
+                  height: width * 0.2,
                   width: width * 0.8,
                   backgroundColor: 'rgba(255,255,255,0.3)',
-                  borderColor: 'rgba(255,255,255,0.7)',
-                  borderWidth: 1,
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
                   marginVertical: 10,
-                  marginTop: 30,
+                  marginTop: 50,
                 }}
                 onPress={() => {
                   this.props.navigation.navigate('Challenges');
@@ -644,8 +656,9 @@ const styles = {
   },
   logoStyle: {
     fontSize: 30,
+    textAlign: 'center',
     fontWeight: '600',
-    color: '#F3D302',
+    color: '#F38F17',
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',

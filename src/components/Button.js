@@ -7,7 +7,8 @@ export default class Button extends Component {
   render() {
     return(
       <TouchableOpacity style={this.props.style} onPress={this.props.onPress}>
-        <Text style={{color: "#FFFFFF", fontFamily: 'JosefinSans-Regular', fontSize: width*0.06}}>{this.props.buttonText}</Text>
+        <Text style={{color: "#FFFFFF", fontFamily: 'JosefinSans-Regular', fontSize: width*0.04
+          , textAlign: 'center'}}>{this.props.buttonText}</Text>
       </TouchableOpacity>
     )
   }
