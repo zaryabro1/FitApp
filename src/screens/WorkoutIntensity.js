@@ -12,6 +12,12 @@ import Textfield from '../components/Textfield';
 import Button from '../components/Button';
 import LinearGradieant from 'react-native-linear-gradient';
 import {CHALLENGE_LEVEL} from '../system/FitnessSystem';
+import {
+  setFullBodyLevel,
+  setAbsLevel,
+  setButtLevel,
+  setArmLevel,
+  setLegLevel,} from '../global/Functions';
 
 const {width, height} = Dimensions.get('window');
 // const { title } = route.params;
@@ -25,7 +31,7 @@ export default class WorkoutIntensity extends Component {
           backgroundColor={'transparent'}
         />
         <Image
-          source={require('../../assets/imageSix.jpg')}
+          source={require('../../assets/background/background.png')}
           style={styles.splashImage}
         />
         <LinearGradieant
@@ -41,9 +47,9 @@ export default class WorkoutIntensity extends Component {
                 style={{
                   height: width * 0.14,
                   width: width * 0.9,
-                  backgroundColor: 'rgba(41, 241, 195, 0.3)',
-                  borderColor: 'rgba(41, 241, 195, 0.7)',
-                  borderWidth: 1,
+                   backgroundColor: 'rgba(255,255,255,0.3)',
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -51,6 +57,18 @@ export default class WorkoutIntensity extends Component {
                   marginTop: 10,
                 }}
                 onPress={() => {
+                  if (this.props.route.params.title == 'FULL BODY WORKOUT'){
+                    setFullBodyLevel('Beginner 1');
+                  } else if (this.props.route.params.title == 'ABS WORKOUT'){
+                    setAbsLevel('Beginner 1');
+                  } else if (this.props.route.params.title == 'BUTT WORKOUT') {
+                    setButtLevel('Beginner 1');
+                  } else if (this.props.route.params.title == 'ARM WORKOUT') {
+                    setArmLevel('Beginner 1');
+                  } else if (this.props.route.params.title == 'LEG WORKOUT') {
+                    setLegLevel('Beginner 1');
+                  }
+
                   this.props.navigation.navigate('ExerciseScreen', {
                     title: this.props.route.params.title,
                     level: CHALLENGE_LEVEL.beginner1,
@@ -63,9 +81,9 @@ export default class WorkoutIntensity extends Component {
                 style={{
                   height: width * 0.14,
                   width: width * 0.9,
-                  backgroundColor: 'rgba(41, 241, 195, 0.3)',
-                  borderColor: 'rgba(41, 241, 195, 0.7)',
-                  borderWidth: 1,
+                  backgroundColor: 'rgba(255,255,255,0.3)',
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -73,6 +91,18 @@ export default class WorkoutIntensity extends Component {
                   marginTop: 10,
                 }}
                 onPress={() => {
+                  if (this.props.route.params.title == 'FULL BODY WORKOUT'){
+                    setFullBodyLevel('Beginner 2');
+                  } else if (this.props.route.params.title == 'ABS WORKOUT'){
+                    setAbsLevel('Beginner 2');
+                  } else if (this.props.route.params.title == 'BUTT WORKOUT') {
+                    setButtLevel('Beginner 2');
+                  } else if (this.props.route.params.title == 'ARM WORKOUT') {
+                    setArmLevel('Beginner 2');
+                  } else if (this.props.route.params.title == 'LEG WORKOUT') {
+                    setLegLevel('Beginner 2');
+                  }
+
                   this.props.navigation.navigate('ExerciseScreen', {
                     title: this.props.route.params.title,
                     level: CHALLENGE_LEVEL.beginner2,
@@ -85,9 +115,9 @@ export default class WorkoutIntensity extends Component {
                 style={{
                   height: width * 0.14,
                   width: width * 0.9,
-                  backgroundColor: 'rgba(236,255,85, 0.3)', //rgb(236,255,85)
-                  borderColor: 'rgba(236,255,85,0.7)',
-                  borderWidth: 1,
+                  backgroundColor: 'rgba(255,255,255,0.3)',
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -95,6 +125,19 @@ export default class WorkoutIntensity extends Component {
                   marginTop: width*0.065,
                 }}
                 onPress={() => {
+                  if (this.props.route.params.title == 'FULL BODY WORKOUT'){
+                    setFullBodyLevel('Intermediate 1');
+                  } else if (this.props.route.params.title == 'ABS WORKOUT'){
+                    setAbsLevel('Intermediate 1');
+                  } else if (this.props.route.params.title == 'BUTT WORKOUT') {
+                    setButtLevel('Intermediate 1');
+                  } else if (this.props.route.params.title == 'ARM WORKOUT') {
+                    setArmLevel('Intermediate 1');
+                  } else if (this.props.route.params.title == 'LEG WORKOUT') {
+                    setLegLevel('Intermediate 1');
+                  }
+
+                  // setFullBodyLevel('Intermediate 1');
                   this.props.navigation.navigate('ExerciseScreen', {
                     title: this.props.route.params.title,
                     level: CHALLENGE_LEVEL.intermediate1,
@@ -107,9 +150,9 @@ export default class WorkoutIntensity extends Component {
                 style={{
                   height: width * 0.14,
                   width: width * 0.9,
-                  backgroundColor: 'rgba(236,255,85, 0.3)', //rgb(236,255,85)
-                  borderColor: 'rgba(236,255,85,0.7)',
-                  borderWidth: 1,
+                  backgroundColor: 'rgba(255,255,255,0.3)',
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -117,6 +160,19 @@ export default class WorkoutIntensity extends Component {
                   marginTop: 10,
                 }}
                 onPress={() => {
+                  if (this.props.route.params.title == 'FULL BODY WORKOUT'){
+                    setFullBodyLevel('Intermediate 2');
+                  } else if (this.props.route.params.title == 'ABS WORKOUT'){
+                    setAbsLevel('Intermediate 2');
+                  } else if (this.props.route.params.title == 'BUTT WORKOUT') {
+                    setButtLevel('Intermediate 2');
+                  } else if (this.props.route.params.title == 'ARM WORKOUT') {
+                    setArmLevel('Intermediate 2');
+                  } else if (this.props.route.params.title == 'LEG WORKOUT') {
+                    setLegLevel('Intermediate 2');
+                  }
+
+                  // setFullBodyLevel('Intermediate 2');
                   this.props.navigation.navigate('ExerciseScreen', {
                     title: this.props.route.params.title,
                     level: CHALLENGE_LEVEL.intermediate2,
@@ -129,9 +185,9 @@ export default class WorkoutIntensity extends Component {
                 style={{
                   height: width * 0.14,
                   width: width * 0.9,
-                  backgroundColor: 'rgba(255,75,114, 0.3)',
-                  borderColor: 'rgba(255,75,114,0.7)',
-                  borderWidth: 1,
+                  backgroundColor: 'rgba(255,255,255,0.3)',
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -139,6 +195,19 @@ export default class WorkoutIntensity extends Component {
                   marginTop: width*0.065,
                 }}
                 onPress={() => {
+                  if (this.props.route.params.title == 'FULL BODY WORKOUT'){
+                    setFullBodyLevel('Professional 1');
+                  } else if (this.props.route.params.title == 'ABS WORKOUT'){
+                    setAbsLevel('Professional 1');
+                  } else if (this.props.route.params.title == 'BUTT WORKOUT') {
+                    setButtLevel('Professional 1');
+                  } else if (this.props.route.params.title == 'ARM WORKOUT') {
+                    setArmLevel('Professional 1');
+                  } else if (this.props.route.params.title == 'LEG WORKOUT') {
+                    setLegLevel('Professional 1');
+                  }
+
+                  // setFullBodyLevel('Professional 1');
                   this.props.navigation.navigate('ExerciseScreen', {
                     title: this.props.route.params.title,
                     level: CHALLENGE_LEVEL.professional1,
@@ -151,9 +220,9 @@ export default class WorkoutIntensity extends Component {
                 style={{
                   height: width * 0.14,
                   width: width * 0.9,
-                  backgroundColor: 'rgba(255,75,114, 0.3)',
-                  borderColor: 'rgba(255,75,114,0.7)',
-                  borderWidth: 1,
+                  backgroundColor: 'rgba(255,255,255,0.3)',
+                  borderColor: '#F38F17',
+                  borderWidth: width*0.025,
                   borderRadius: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -161,6 +230,19 @@ export default class WorkoutIntensity extends Component {
                   marginTop: 10,
                 }}
                 onPress={() => {
+                  if (this.props.route.params.title == 'FULL BODY WORKOUT'){
+                    setFullBodyLevel('Professional 2');
+                  } else if (this.props.route.params.title == 'ABS WORKOUT'){
+                    setAbsLevel('Professional 2');
+                  } else if (this.props.route.params.title == 'BUTT WORKOUT') {
+                    setButtLevel('Professional 2');
+                  } else if (this.props.route.params.title == 'ARM WORKOUT') {
+                    setArmLevel('Professional 2');
+                  } else if (this.props.route.params.title == 'LEG WORKOUT') {
+                    setLegLevel('Professional 2');
+                  }
+
+                  // setFullBodyLevel('Professional 2');
                   this.props.navigation.navigate('ExerciseScreen', {
                     title: this.props.route.params.title,
                     level: CHALLENGE_LEVEL.professional2,
@@ -220,7 +302,7 @@ const styles = {
     fontSize: 25,
     // marginBottom: ,
     fontWeight: '600',
-    color: '#F3D302',
+    color: '#F38F17',
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',

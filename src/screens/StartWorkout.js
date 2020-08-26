@@ -116,7 +116,7 @@ export default class StartWorkout extends Component {
             }}>
             {(this.state.toShow == 3 &&
               this.state.workoutIndex <
-                this.props.route.params.itemName.length && (
+              this.props.route.params.itemName.length && (
                 <View style={{justifyContent: 'center', alignItems: 'center'}}>
                   <Text style={styles.logoStyle}>
                     {
@@ -127,55 +127,55 @@ export default class StartWorkout extends Component {
                   <Image
                     source={
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Jumping Jack' &&
+                          .title == 'Jumping Jack' &&
                         require('../../assets/gifs/jumpingjack.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Crunches' &&
+                          .title == 'Crunches' &&
                         require('../../assets/gifs/crunches.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Lunges' &&
+                          .title == 'Lunges' &&
                         require('../../assets/gifs/lunges.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Bird Dog' &&
+                          .title == 'Bird Dog' &&
                         require('../../assets/gifs/bird-dog.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Mountain Climbing' &&
+                          .title == 'Mountain Climbing' &&
                         require('../../assets/gifs/mountain-climbing.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Push Up' &&
+                          .title == 'Push Up' &&
                         require('../../assets/gifs/push-ups.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Squats' &&
+                          .title == 'Squats' &&
                         require('../../assets/gifs/squats.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Planks' &&
+                          .title == 'Planks' &&
                         require('../../assets/gifs/plank_f_rgb.jpg')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Stepup Onto Chair' &&
+                          .title == 'Step Onto Chair' &&
                         require('../../assets/gifs/step-up-onto-chair.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Butt Bridge' &&
+                          .title == 'Butt Bridge' &&
                         require('../../assets/gifs/butt--brigde.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Reverse Crunches' &&
+                          .title == 'Reverse Crunches' &&
                         require('../../assets/gifs/reverse-crunches.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Scissors' &&
+                          .title == 'Scissors' &&
                         require('../../assets/gifs/scissors.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Triceps Dips' &&
+                          .title == 'Triceps Dips' &&
                         require('../../assets/gifs/tricep-dips.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Abdominal Crunches' &&
+                          .title == 'Abdominal Crunches' &&
                         require('../../assets/gifs/abs/abdominal-crunches.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Sit Ups' &&
+                          .title == 'Sit Ups' &&
                         require('../../assets/gifs/abs/sit-ups.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Leg Raises' &&
+                          .title == 'Leg Raises' &&
                         require('../../assets/gifs/abs/leg-raises.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                        .title == 'Plank' &&
+                          .title == 'Plank' &&
                         require('../../assets/gifs/abs/plank_f_rgb.jpg'))
                     }
                     style={{
@@ -251,187 +251,200 @@ export default class StartWorkout extends Component {
                   </TouchableOpacity>
                 </View>
               )) ||
-              (this.state.toShow == 1 && (
+            (this.state.toShow == 1 && (
+              <View
+                style={{
+                  width: width,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  paddingTop: width * 0.15,
+                }}>
+                <Text
+                  style={{
+                    fontSize: width * 0.2,
+                    // marginBottom: ,
+                    fontWeight: '600',
+                    color: '#F38F17',
+                    // position: 'absolute',
+                    // zIndex: 1003,
+                    fontFamily: 'JosefinSans-Bold',
+                  }}>
+                  Start!
+                </Text>
+              </View>
+            )) ||
+            (this.state.toShow == 4 && (
+              <View
+                style={{
+                  width: width,
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  paddingVertical: width * 0.15,
+                  height: '100%',
+                }}>
+                <Text
+                  style={{
+                    fontSize: width * 0.115,
+                    // marginBottom: ,
+                    fontWeight: '600',
+                    color: '#F38F17',
+                    textAlign: 'center',
+                    // position: 'absolute',
+                    // zIndex: 1003,
+                    fontFamily: 'JosefinSans-Bold',
+                  }}>
+                  Congratulations!
+                </Text>
+                <Image
+                  source={require('../../assets/doublethumbsup.png')}
+                  style={{
+                    resizeMode: 'contain',
+                    height: width * 0.35,
+                    width: width * 0.55,
+                  }}
+                />
+                <Text
+                  style={{
+                    fontSize: width * 0.07,
+
+                    color: '#FFFFFF',
+                    // position: 'absolute',
+                    // zIndex: 1003,
+                    fontFamily: 'JosefinSans-regular',
+                  }}>
+                  You are done for the day.
+                </Text>
                 <View
                   style={{
-                    width: width,
-                    alignItems: 'center',
+                    flexDirection: 'row',
                     justifyContent: 'center',
-                    paddingTop: width * 0.15,
+                    alignItems: 'center',
                   }}>
-                  <Text
+                  <Image
+                    source={require('../../assets/partypopper.png')}
                     style={{
-                      fontSize: width * 0.2,
-                      // marginBottom: ,
-                      fontWeight: '600',
-                      color: '#F38F17',
-                      // position: 'absolute',
-                      // zIndex: 1003,
-                      fontFamily: 'JosefinSans-Bold',
-                    }}>
-                    Start!
-                  </Text>
+                      resizeMode: 'contain',
+                      height: width * 0.2,
+                      width: width * 0.2,
+                    }}
+                  />
+                  <Image
+                    source={require('../../assets/partypopper.png')}
+                    style={{
+                      resizeMode: 'contain',
+                      height: width * 0.2,
+                      width: width * 0.2,
+                    }}
+                  />
+                  <Image
+                    source={require('../../assets/partypopper.png')}
+                    style={{
+                      resizeMode: 'contain',
+                      height: width * 0.2,
+                      width: width * 0.2,
+                    }}
+                  />
                 </View>
-              )) ||
-              (this.state.toShow == 4 && (
+                <Button
+                  buttonText={'DONE'}
+                  style={{
+                    height: width * 0.2,
+                    width: width * 0.9,
+                    backgroundColor: 'rgba(255,255,255,0.3)',
+                    borderColor: '#F38F17',
+                    borderWidth: width * 0.025,
+                    borderRadius: 10,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginVertical: 10,
+                    marginTop: 40,
+                  }}
+                  onPress={() => {
+                    this.props.navigation.goBack();
+                  }}
+                />
+              </View>
+            )) ||
+            (this.state.toShow == 2 && (
+              <View style={{
+                width: width,
+                paddingTop: width * 0.07,
+                // flex: 1,
+                height: height,
+                alignItems: 'space-between',
+              }}>
                 <View
                   style={{
+                    // height: width * 0.2,
                     width: width,
+                    justifyContent: 'center',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
-                    paddingVertical: width * 0.15,
-                    height: '100%',
                   }}>
                   <Text
                     style={{
-                      fontSize: width * 0.115,
+                      fontSize: width * 0.09,
                       // marginBottom: ,
                       fontWeight: '600',
-                      color: '#F38F17',
+                      color: 'rgba(243, 143, 23, 1)',
                       textAlign: 'center',
                       // position: 'absolute',
                       // zIndex: 1003,
                       fontFamily: 'JosefinSans-Bold',
                     }}>
-                    Congratulations!
+                    Get Ready!
                   </Text>
-                  <Image
-                    source={require('../../assets/doublethumbsup.png')}
-                    style={{
-                      resizeMode: 'contain',
-                      height: width * 0.35,
-                      width: width * 0.55,
-                    }}
-                  />
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    width: width,
+                    justifyContent: 'space-around',
+                    // backgroundColor: 'red'
+                  }}>
                   <Text
                     style={{
-                      fontSize: width * 0.07,
+                      fontSize: width * 0.05,
+                      fontFamily: 'JosefinSans-Bold',
+                      color: 'rgba(255, 255, 255, 0.8)',
 
-                      color: '#FFFFFF',
-                      // position: 'absolute',
-                      // zIndex: 1003,
-                      fontFamily: 'JosefinSans-regular',
+                      // marginLeft: width * 0.05,
                     }}>
-                    You are done for the day.
+                    {this.props.route.params.burning}
                   </Text>
-                  <View
+
+                  <Text
                     style={{
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignItems: 'center',
+                      fontSize: width * 0.05,
+                      fontFamily: 'JosefinSans-Bold',
+                      color: 'rgba(255, 255, 255, 0.8)',
+
+                      marginLeft: width * 0.05,
                     }}>
-                    <Image
-                      source={require('../../assets/partypopper.png')}
-                      style={{
-                        resizeMode: 'contain',
-                        height: width * 0.2,
-                        width: width * 0.2,
-                      }}
-                    />
-                    <Image
-                      source={require('../../assets/partypopper.png')}
-                      style={{
-                        resizeMode: 'contain',
-                        height: width * 0.2,
-                        width: width * 0.2,
-                      }}
-                    />
-                    <Image
-                      source={require('../../assets/partypopper.png')}
-                      style={{
-                        resizeMode: 'contain',
-                        height: width * 0.2,
-                        width: width * 0.2,
-                      }}
-                    />
-                  </View>
-                  <Button
-                    buttonText={'DONE'}
+                    {this.props.route.params.time}
+                  </Text>
+
+                  <Text
                     style={{
-                      height: width * 0.2,
-                      width: width * 0.9,
-                      backgroundColor: 'rgba(255,255,255,0.3)',
-                      borderColor: '#F38F17',
-                      borderWidth: width * 0.025,
-                      borderRadius: 10,
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      marginVertical: 10,
-                      marginTop: 40,
-                    }}
-                    onPress={() => {
-                      this.props.navigation.goBack();
-                    }}
-                  />
+                      fontSize: width * 0.05,
+                      fontFamily: 'JosefinSans-Bold',
+                      color: 'rgba(255, 255, 255, 0.8)',
+
+                      marginLeft: width * 0.05,
+                    }}>
+                    {this.props.route.params.level}
+                  </Text>
                 </View>
-              )) ||
-              (this.state.toShow == 2 && (
-                <View style={{width: width, paddingTop: width * 0.07}}>
-                  <View
-                    style={{
-                      height: width * 0.2,
-                      width: width,
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}>
-                    <Text
-                      style={{
-                        fontSize: width * 0.09,
-                        // marginBottom: ,
-                        fontWeight: '600',
-                        color: '#F3D302',
-                        textAlign: 'center',
-                        // position: 'absolute',
-                        // zIndex: 1003,
-                        fontFamily: 'JosefinSans-Bold',
-                      }}>
-                      Get Ready!
-                    </Text>
-                  </View>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      width: width,
-                      justifyContent: 'space-around',
-                    }}>
-                    <Text
-                      style={{
-                        fontSize: width * 0.05,
-                        fontFamily: 'JosefinSans-Bold',
-                        color: 'rgba(255, 255, 255, 0.8)',
-
-                        marginLeft: width * 0.05,
-                      }}>
-                      {this.props.route.params.burning}
-                    </Text>
-
-                    <Text
-                      style={{
-                        fontSize: width * 0.05,
-                        fontFamily: 'JosefinSans-Bold',
-                        color: 'rgba(255, 255, 255, 0.8)',
-
-                        marginLeft: width * 0.05,
-                      }}>
-                      {this.props.route.params.time}
-                    </Text>
-
-                    <Text
-                      style={{
-                        fontSize: width * 0.05,
-                        fontFamily: 'JosefinSans-Bold',
-                        color: 'rgba(255, 255, 255, 0.8)',
-
-                        marginLeft: width * 0.05,
-                      }}>
-                      {this.props.route.params.level}
-                    </Text>
-                  </View>
-                  {/*<View style={{backgroundColor: 'transparent', flex: 1}}>*/}
+                {/*<View style={{backgroundColor: 'transparent', flex: 1}}>*/}
+                <View style={{
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  // paddingBottom: width*0.1
+                  flex: 1,
+                }}>
                   <FlatList
                     contentContainerStyle={{
-                      paddingBottom: 20,
-                      height: width * 1.05,
+                      // paddingBottom: 20,
+
                     }}
                     data={this.props.route.params.itemName}
                     keyExtractor={(item, index) => {
@@ -447,10 +460,11 @@ export default class StartWorkout extends Component {
                           style={{
                             width: width,
                             alignItems: 'center',
-                            height: width * 0.19,
+                            height: width * 0.25,
                             flexDirection: 'row',
                             paddingTop: width * 0.15,
                             paddingLeft: width * 0.03,
+                            paddingBottom: 20
                           }}>
                           <Image
                             style={{width: width * 0.15, height: width * 0.15}}
@@ -471,7 +485,7 @@ export default class StartWorkout extends Component {
                                 require('../../assets/gifs/squats.gif')) ||
                               (item.title == 'Planks' &&
                                 require('../../assets/gifs/plank_f_rgb.jpg')) ||
-                              (item.title == 'Stepup Onto Chair' &&
+                              (item.title == 'Step Onto Chair' &&
                                 require('../../assets/gifs/step-up-onto-chair.gif')) ||
                               (item.title == 'Butt Bridge' &&
                                 require('../../assets/gifs/butt--brigde.gif')) ||
@@ -491,7 +505,6 @@ export default class StartWorkout extends Component {
                                 require('../../assets/gifs/abs/plank_f_rgb.jpg'))
                             }
                           />
-
                           <Text
                             style={{
                               fontSize: width * 0.05,
@@ -505,82 +518,48 @@ export default class StartWorkout extends Component {
                       );
                     }}
                   />
-                  {/*</View>*/}
-                  <View
+                </View>
+                {/*</View>*/}
+                <View
+                  style={{
+                    // height: 50,
+                    width: width,
+                    // height: width * 0.2,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    // marginBottom: width * 0.5,
+                  }}>
+                  <Button
+                    buttonText={'START'}
                     style={{
-                      width: width,
-                      height: width * 0.2,
+                      height: width * 0.14,
+                      width: width * 0.9,
+                      backgroundColor: 'rgba(255,255,255,0.3)',
+                      borderColor: '#F38F17',
+                      borderWidth: width * 0.025,
+                      borderRadius: 10,
                       justifyContent: 'center',
                       alignItems: 'center',
-                      marginBottom: width * 0.5,
-                    }}>
-                    <Button
-                      buttonText={'START'}
-                      style={{
-                        height: width * 0.14,
-                        width: width * 0.9,
-                        backgroundColor:
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.beginner1 &&
-                            'rgba(41, 241, 195, 0.3)') ||
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.beginner2 &&
-                            'rgba(41, 241, 195, 0.3)') ||
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.intermediate1 &&
-                            'rgba(236,255,85, 0.3)') ||
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.intermediate2 &&
-                            'rgba(236,255,85, 0.3)') ||
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.professional1 &&
-                            'rgba(255,75,114, 0.3)') ||
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.professional2 &&
-                            'rgba(255,75,114, 0.3)'),
-                        borderColor:
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.beginner1 &&
-                            'rgba(41, 241, 195, 0.7)') ||
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.beginner2 &&
-                            'rgba(41, 241, 195, 0.7)') ||
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.intermediate1 &&
-                            'rgba(236,255,85,0.7)') ||
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.intermediate2 &&
-                            'rgba(236,255,85,0.7)') ||
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.professional1 &&
-                            'rgba(255,75,114,0.7)') ||
-                          (this.props.route.params.level ===
-                            CHALLENGE_LEVEL.professional2 &&
-                            'rgba(255,75,114,0.7)'),
-                        borderWidth: 1,
-                        borderRadius: 10,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        marginBottom: width * 0.1,
-                        marginTop: width * 0.03,
-                      }}
-                      onPress={async () => {
-                        // title, level
-                        this.setState({toShow: 1});
-                        //SoundPlayer.playSoundFile('go', 'mp3')
-                        // try {
-                        //   // play the file tone.mp3
-                        //   SoundPlayer.playSoundFile('go', 'mp3')
-                        //   // or play from url
-                        //  // SoundPlayer.playUrl('https://example.com/music.mp3')
-                        // } catch (e) {
-                        //   console.log(`cannot play the sound file`, e)
-                        // }
-                      }}
-                    />
-                  </View>
+                      marginBottom: width * 0.15,
+                      marginTop: width * 0.03,
+                    }}
+                    onPress={ () => {
+                      // title, level
+                      this.setState({toShow: 1});
+                      //SoundPlayer.playSoundFile('go', 'mp3')
+                      // try {
+                      //   // play the file tone.mp3
+                      //   SoundPlayer.playSoundFile('go', 'mp3')
+                      //   // or play from url
+                      //  // SoundPlayer.playUrl('https://example.com/music.mp3')
+                      // } catch (e) {
+                      //   console.log(`cannot play the sound file`, e)
+                      // }
+                    }}
+                  />
                 </View>
-              ))}
+              </View>
+            ))}
 
             {/*{*/}
             {/*  this.props.route.params.index == 0*/}

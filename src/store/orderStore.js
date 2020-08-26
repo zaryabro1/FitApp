@@ -7,7 +7,12 @@ class orderStore {
     identity:{
      sex: '',
      weight: 0,
-     weightType: ''
+     weightType: '',
+     fullBodyLevel: '',
+     absLevel: '',
+     buttLevel: '',
+     armLevel: '',
+     legLevel: '',
     }
   };
 

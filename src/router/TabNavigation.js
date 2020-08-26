@@ -45,7 +45,7 @@ export default function App() {
                     resizeMode: 'contain',
                     height: width * 0.05,
                     width: width * 0.05,
-                    tintColor: '#F3D302',
+                    tintColor: '#F38F17',
                   }
                 : {
                     resizeMode: 'contain',
@@ -63,7 +63,7 @@ export default function App() {
                     resizeMode: 'contain',
                     height: width * 0.07,
                     width: width * 0.07,
-                    tintColor: '#F3D302',
+                    tintColor: '#F38F17',
                   }
                 : {
                     resizeMode: 'contain',
@@ -81,7 +81,7 @@ export default function App() {
                     resizeMode: 'contain',
                     height: width * 0.05,
                     width: width * 0.05,
-                    tintColor: '#F3D302',
+                    tintColor: '#F38F17',
                   }
                 : {
                     resizeMode: 'contain',
@@ -99,7 +99,7 @@ export default function App() {
                     resizeMode: 'contain',
                     height: width * 0.05,
                     width: width * 0.05,
-                    tintColor: '#F3D302',
+                    tintColor: '#F38F17',
                   }
                 : {
                     resizeMode: 'contain',
@@ -119,7 +119,7 @@ export default function App() {
         })}
 
         tabBarOptions={{
-          activeTintColor: '#F3D302',
+          activeTintColor: '#F38F17',
           inactiveTintColor: 'gray',
           labelStyle:{fontSize: width*0.03, fontFamily: 'JosefinSans-Bold'},
           style: {backgroundColor: 'rgba(0,0,0,0.8)'},

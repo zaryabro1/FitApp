@@ -603,6 +603,7 @@ class Plan extends Component {
                 }}
                 onPress={() => {
                   this.props.navigation.navigate('Challenges');
+                  this.setState({view: 1});
                 }}
               />
             </View>

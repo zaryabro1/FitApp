@@ -34,6 +34,8 @@ export default class ExerciseScreen extends Component {
       await this.updateData();
       // console.warn(this.state.data);
     });
+    // this.unsubscribe = this.props.navigation.addListener('focus', async (e) => {
+    // });
   };
 
   componentWillUnmount(): void {
@@ -78,7 +80,7 @@ export default class ExerciseScreen extends Component {
           backgroundColor={'transparent'}
         />
         <Image
-          source={require('../../assets/imageFourteen.jpg')}
+          source={require('../../assets/background/background.png')}
           style={styles.splashImage}
         />
         {/*<NavigationEvents onDidFocus={() => console.log('I am triggered')} />*/}
@@ -112,44 +114,26 @@ export default class ExerciseScreen extends Component {
                       height: width * 0.14,
                       width: width * 0.14,
                       opacity: isDisabled ? 0.3 : 1,
-                      backgroundColor:
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.beginner1 &&
-                          'rgba(41, 241, 195, 0.3)') ||
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.beginner2 &&
-                          'rgba(41, 241, 195, 0.3)') ||
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.intermediate1 &&
-                          'rgba(236,255,85, 0.3)') ||
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.intermediate2 &&
-                          'rgba(236,255,85, 0.3)') ||
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.professional1 &&
-                          'rgba(255,75,114, 0.3)') ||
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.professional2 &&
-                          'rgba(255,75,114, 0.3)'),
-                      borderColor:
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.beginner1 &&
-                          'rgba(41, 241, 195, 0.7)') ||
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.beginner2 &&
-                          'rgba(41, 241, 195, 0.7)') ||
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.intermediate1 &&
-                          'rgba(236,255,85,0.7)') ||
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.intermediate2 &&
-                          'rgba(236,255,85,0.7)') ||
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.professional1 &&
-                          'rgba(255,75,114,0.7)') ||
-                        (this.props.route.params.level ===
-                          CHALLENGE_LEVEL.professional2 &&
-                          'rgba(255,75,114,0.7)'),
+                      backgroundColor: 'rgba(243, 143, 23, 1)',
+                      // borderColor:
+                      //   (this.props.route.params.level ===
+                      //     CHALLENGE_LEVEL.beginner1 &&
+                      //     'rgba(41, 241, 195, 0.7)') ||
+                      //   (this.props.route.params.level ===
+                      //     CHALLENGE_LEVEL.beginner2 &&
+                      //     'rgba(41, 241, 195, 0.7)') ||
+                      //   (this.props.route.params.level ===
+                      //     CHALLENGE_LEVEL.intermediate1 &&
+                      //     'rgba(236,255,85,0.7)') ||
+                      //   (this.props.route.params.level ===
+                      //     CHALLENGE_LEVEL.intermediate2 &&
+                      //     'rgba(236,255,85,0.7)') ||
+                      //   (this.props.route.params.level ===
+                      //     CHALLENGE_LEVEL.professional1 &&
+                      //     'rgba(255,75,114,0.7)') ||
+                      //   (this.props.route.params.level ===
+                      //     CHALLENGE_LEVEL.professional2 &&
+                      //     'rgba(255,75,114,0.7)'),
                       borderWidth: 1,
                       borderRadius: 30,
                       justifyContent: 'center',
@@ -160,6 +144,7 @@ export default class ExerciseScreen extends Component {
                     }}
                     disabled={isDisabled}
                     onPress={() => {
+
                       // console.log(this.props.route.params.title, this.props.route.params.level, item.exercises[0])
                       if (!isDisabled) {
                         this.props.navigation.navigate('StartWorkout', {
@@ -178,6 +163,8 @@ export default class ExerciseScreen extends Component {
                 );
               }}
             />
+            {/*//TODO: Show percentage of exercise done*/}
+
             {this.state.percentageDone != 0 && (
               <View
                 style={{
@@ -202,7 +189,7 @@ export default class ExerciseScreen extends Component {
                     style={{
                       width: `${this.state.percentageDone}%`,
                       height: '100%',
-                      backgroundColor: 'rgba(236,255,85,0.8)',
+                      backgroundColor: 'rgba(243, 143, 23, 1)',
                       borderTopLeftRadius: width * 0.2,
                     }}
                   />
@@ -210,7 +197,7 @@ export default class ExerciseScreen extends Component {
                     style={{
                       width: `${100 - this.state.percentageDone}%`,
                       height: '100%',
-                      backgroundColor: 'rgba(236,255,85,0.3)',
+                      backgroundColor: 'rgba(243, 143, 23, 0.3)',
                       borderBottomRightRadius: width * 0.2,
                     }}
                   />
@@ -221,7 +208,7 @@ export default class ExerciseScreen extends Component {
                     fontSize: 18,
                     // marginBottom: width * 0.07,
                     fontWeight: '600',
-                    color: '#F3D302',
+                    color: 'rgba(243, 143, 23, 1)',
                     // position: 'absolute',
                     // zIndex: 1003,
                     fontFamily: 'JosefinSans-Bold',
@@ -284,7 +271,7 @@ const styles = {
     fontSize: 25,
     // marginBottom: ,
     fontWeight: '600',
-    color: '#F3D302',
+    color: 'rgba(243, 143, 23, 1)',
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',
@@ -294,7 +281,7 @@ const styles = {
     fontSize: 18,
     // marginBottom: ,
     fontWeight: '600',
-    color: '#F3D302',
+    color: '#B5B5B5',
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',
