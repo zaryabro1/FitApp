@@ -7,6 +7,8 @@ import {
   Dimensions,
   TouchableOpacity,
   FlatList,
+  BackHandler,
+  Alert,
 } from 'react-native';
 import Button from '../components/Button';
 import LinearGradieant from 'react-native-linear-gradient';
@@ -29,7 +31,24 @@ let _onFinishedLoadingFileSubscription = null;
 let _onFinishedLoadingURLSubscription = null;
 
 export default class StartWorkout extends Component {
+
+  backAction = () => {
+    Alert.alert("Hold on!", "You have not completed today's exercises, you will have start over later!", [
+      {
+        text: "Cancel",
+        onPress: () => null,
+        style: "cancel"
+      },
+      { text: "YES", onPress: () => this.props.navigation.goBack() }
+    ]);
+    return true;
+  };
+
   componentDidMount(): void {
+    this.backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      this.backAction
+    );
     // console.warn(this.props.route.params.itemName);
 
     // _onFinishedPlayingSubscription = SoundPlayer.addEventListener('FinishedPlaying', ({ success }) => {
@@ -57,10 +76,30 @@ export default class StartWorkout extends Component {
 
   componentWillUnmount() {
     // _onFinishedPlayingSubscription.remove()
+    this.backHandler.remove();
     _onFinishedLoadingSubscription.remove();
     // _onFinishedLoadingURLSubscription.remove()
     // _onFinishedLoadingFileSubscription.remove()
   }
+
+  startTimerForRest = () => {
+    // let secForRest = 30;
+    if(this.countDownInterval)
+      clearInterval(this.countDownInterval);
+
+    this.setState({timer: 30})
+    this.countDownInterval = setInterval(() => {
+      // this.setState({timer: secForRest})
+      // secForRest--;
+      this.setState({timer: this.state.timer-1}, () => {
+        if(this.state.timer <= 0 || this.state.toShow !== 5) {
+          clearInterval(this.countDownInterval)
+        }
+      });
+
+       // ((this.state.stopTimer == true || (this.state.timer <= 0 && this.state.toShow != 3)) && clearInterval(countdown));
+    }, 1000)
+  };
 
   palySound = () => {
     if (this.state.toShow == 1) {
@@ -76,7 +115,10 @@ export default class StartWorkout extends Component {
 
   state = {
     workoutIndex: 0,
+    stopTimer: false,
     toShow: 2,
+    timer: 30,
+    secForRest: 30,
   };
 
   render() {
@@ -151,7 +193,7 @@ export default class StartWorkout extends Component {
                           .title == 'Planks' &&
                         require('../../assets/gifs/plank_f_rgb.jpg')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                          .title == 'Step Onto Chair' &&
+                          .title == 'Stepup Onto Chair' &&
                         require('../../assets/gifs/step-up-onto-chair.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
                           .title == 'Butt Bridge' &&
@@ -229,11 +271,11 @@ export default class StartWorkout extends Component {
                       }}
                       onPress={async () => {
                         // title, level
-                        await SetFitnessStatusTrue(
-                          this.props.route.params.title,
-                          this.props.route.params.level,
-                          this.props.route.params.day,
-                        );
+                        // await SetFitnessStatusTrue(
+                        //   this.props.route.params.title,
+                        //   this.props.route.params.level,
+                        //   this.props.route.params.day,
+                        // );
                         this.setState(
                           {workoutIndex: this.state.workoutIndex + 1},
                           async () => {
@@ -243,6 +285,11 @@ export default class StartWorkout extends Component {
                             ) {
                               // await this.props.route.params.beforeGoBack();
                               this.setState({toShow: 4});
+                            } else {
+                              clearInterval(this.countDownInterval);
+                              // this.setState({stopTimer: false});
+                              this.startTimerForRest();
+                              this.setState({toShow: 5});
                             }
                           },
                         );
@@ -250,6 +297,95 @@ export default class StartWorkout extends Component {
                     />
                   </TouchableOpacity>
                 </View>
+              )) || (this.state.toShow == 5 && (
+              <View
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  alignItems: 'center',
+                  justifyContent: 'space-around',
+                  paddingTop: width * 0.15,
+                }}>
+                <Text
+                  style={{
+                    fontSize: width * 0.2,
+                    // marginBottom: ,
+                    textAlign: 'center',
+                    fontWeight: '600',
+                    color: '#F38F17',
+                    // position: 'absolute',
+                    // zIndex: 1003,
+                    fontFamily: 'JosefinSans-Bold',
+                  }}>
+                  Take Rest
+                </Text>
+                <Text
+                  style={{
+                    fontSize: width * 0.1,
+                    // marginBottom: ,
+                    textAlign: 'center',
+                    fontWeight: '600',
+                    color: '#F38F17',
+                    // position: 'absolute',
+                    // zIndex: 1003,
+                    fontFamily: 'JosefinSans-Bold',
+                  }}>
+                 {this.state.timer} sec
+                </Text>
+                <View style={{flexDirection: 'row', justifyContent: 'space-around', width: width}}>
+                <Button
+                  buttonText={'Reset Timer'}
+                  style={{
+                    height: width * 0.14,
+                    width: width * 0.45,
+                    backgroundColor: 'rgba(255,255,255,0.3)',
+                    borderColor: '#F38F17',
+                    borderWidth: width * 0.025,
+                    borderRadius: 10,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginBottom: width * 0.15,
+                    marginTop: width * 0.03,
+                  }}
+                  onPress={ () => {
+                    // clearInterval(this.countDownInterval);
+                    // this.setState({stopTimer: true});
+                    // setTimeout(() => {
+                      // this.startCountdown();
+                      // this.setState({stopTimer: false});
+                      // this.setState({timer: 30});
+                    //   this.setState({stopTimer: false});
+                      this.startTimerForRest();
+                      // },500);
+                  }}
+                />
+
+                <Button
+                  buttonText={'Next Exercise'}
+                  style={{
+                    height: width * 0.14,
+                    width: width * 0.45,
+                    backgroundColor: 'rgba(255,255,255,0.3)',
+                    borderColor: '#F38F17',
+                    borderWidth: width * 0.025,
+                    borderRadius: 10,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginBottom: width * 0.15,
+                    marginTop: width * 0.03,
+                  }}
+                  onPress={ () => {
+                    this.setState({toShow: 3});
+                    // this.setState({timer: 30});
+                    clearInterval(this.countDownInterval)
+                    // this.setState({stopTimer: true});
+
+                  }}
+                />
+
+                </View>
+
+              </View>
               )) ||
             (this.state.toShow == 1 && (
               <View
@@ -359,7 +495,12 @@ export default class StartWorkout extends Component {
                     marginVertical: 10,
                     marginTop: 40,
                   }}
-                  onPress={() => {
+                  onPress={async () => {
+                      await SetFitnessStatusTrue(
+                      this.props.route.params.title,
+                      this.props.route.params.level,
+                      this.props.route.params.day,
+                    );
                     this.props.navigation.goBack();
                   }}
                 />

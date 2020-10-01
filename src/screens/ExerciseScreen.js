@@ -25,6 +25,7 @@ export default class ExerciseScreen extends Component {
     data: [],
     doneCount: 0,
     percentageDone: 0,
+    colNum: 6,
   };
 
   componentDidMount = async () => {
@@ -68,6 +69,7 @@ export default class ExerciseScreen extends Component {
     // console.warn(`${(this.state.doneCount*100)/30}% is done`);
     this.setState({percentageDone: (doneCount * 100) / 30}, () => {
       console.warn(this.state.percentageDone);
+      this.state.percentageDone != 0 ? this.setState({colNum: 6}) : this.setState({colNum: 5});
     });
   };
 
@@ -96,12 +98,15 @@ export default class ExerciseScreen extends Component {
               ({this.props.route.params.level})
             </Text>
             {/*<ScrollView>*/}
+            { this.state.percentageDone != 0 ?
             <FlatList
+              key={'_'}
+              keyExtractor={item => "_" + item.id}
               extraData={(item, index) => `${index}`}
               data={this.state.data}
-              style={{width: width, marginTop: 20}}
+              style={{width: width, marginTop: 10}}
               contentContainerStyle={{alignItems: 'center'}}
-              numColumns={5}
+              numColumns={6}
               renderItem={({item, index}) => {
                 const isDisabled =
                   index !== 0 && !this.state.data[index - 1].done;
@@ -111,8 +116,8 @@ export default class ExerciseScreen extends Component {
                     buttonText={index + 1}
                     shouldShowImage={shouldShowImage}
                     style={{
-                      height: width * 0.14,
-                      width: width * 0.14,
+                      height: width * 0.10 ,
+                      width: width * 0.10 ,
                       opacity: isDisabled ? 0.3 : 1,
                       backgroundColor: 'rgba(243, 143, 23, 1)',
                       // borderColor:
@@ -138,9 +143,9 @@ export default class ExerciseScreen extends Component {
                       borderRadius: 30,
                       justifyContent: 'center',
                       alignItems: 'center',
-                      marginVertical: 20,
+                      marginVertical: width*0.045 ,
                       // marginTop: 10,
-                      margin: 10,
+                      margin:  width*0.031 ,
                     }}
                     disabled={isDisabled}
                     onPress={() => {
@@ -163,6 +168,77 @@ export default class ExerciseScreen extends Component {
                 );
               }}
             />
+            :
+              <FlatList
+                key={'#'}
+                keyExtractor={item => "#" + item.id}
+                extraData={(item, index) => `${index}`}
+                data={this.state.data}
+                style={{width: width, marginTop: 10}}
+                contentContainerStyle={{alignItems: 'center'}}
+                numColumns={5}
+                renderItem={({item, index}) => {
+                  const isDisabled =
+                    index !== 0 && !this.state.data[index - 1].done;
+                  const shouldShowImage = this.state.data[index].done;
+                  return (
+                    <Button
+                      buttonText={index + 1}
+                      shouldShowImage={shouldShowImage}
+                      style={{
+                        height:  width * 0.12,
+                        width:   width * 0.12,
+                        opacity: isDisabled ? 0.3 : 1,
+                        backgroundColor: 'rgba(243, 143, 23, 1)',
+                        // borderColor:
+                        //   (this.props.route.params.level ===
+                        //     CHALLENGE_LEVEL.beginner1 &&
+                        //     'rgba(41, 241, 195, 0.7)') ||
+                        //   (this.props.route.params.level ===
+                        //     CHALLENGE_LEVEL.beginner2 &&
+                        //     'rgba(41, 241, 195, 0.7)') ||
+                        //   (this.props.route.params.level ===
+                        //     CHALLENGE_LEVEL.intermediate1 &&
+                        //     'rgba(236,255,85,0.7)') ||
+                        //   (this.props.route.params.level ===
+                        //     CHALLENGE_LEVEL.intermediate2 &&
+                        //     'rgba(236,255,85,0.7)') ||
+                        //   (this.props.route.params.level ===
+                        //     CHALLENGE_LEVEL.professional1 &&
+                        //     'rgba(255,75,114,0.7)') ||
+                        //   (this.props.route.params.level ===
+                        //     CHALLENGE_LEVEL.professional2 &&
+                        //     'rgba(255,75,114,0.7)'),
+                        borderWidth: 1,
+                        borderRadius: 30,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        marginVertical: width*0.042,
+                        // marginTop: 10,
+                        margin: width*0.037,
+                      }}
+                      disabled={isDisabled}
+                      onPress={() => {
+
+                        // console.log(this.props.route.params.title, this.props.route.params.level, item.exercises[0])
+                        if (!isDisabled) {
+                          this.props.navigation.navigate('StartWorkout', {
+                            title: this.props.route.params.title,
+                            level: this.props.route.params.level,
+                            day: index,
+                            index: index,
+                            itemName: item.exercises,
+                            beforeGoBack: this.updateData,
+                            burning: item.burning,
+                            time: item.time,
+                          });
+                        }
+                      }}
+                    />
+                  );
+                }}
+              />
+            }
             {/*//TODO: Show percentage of exercise done*/}
 
             {this.state.percentageDone != 0 && (
