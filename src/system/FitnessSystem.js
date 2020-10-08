@@ -185,6 +185,24 @@ const GetFitnessByTypeAndChallenge = async (type, challengeLevel) => {
   return data[type][challengeLevel];
 };
 
+//TODO: Reset Fitness By Challenge
+const ResetFitnessByTypeAndChallenge = async  (type, challengeLevel) => {
+  console.warn(`reset ${type} and ${challengeLevel}`);
+  let data = await AsyncStorage.getItem(STORAGE_KEY);
+  data = JSON.parse(data);
+  let dataSingle = data[type][challengeLevel];
+  for (let i = 0; i < dataSingle.length; i++){
+
+   dataSingle[i].done = false;
+  }
+
+  data[type][challengeLevel] = dataSingle;
+
+
+  await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+
+}
+
 const GetFitnessStatus = async (type, challengeLevel, day) => {
   console.log({type, challengeLevel, day})
   let data = await AsyncStorage.getItem(STORAGE_KEY);
@@ -204,6 +222,7 @@ const SetFitnessStatusTrue = async (type, challengeLevel, day) => {
 export {
   InitializeFitnessSystem,
   GetFitnessByTypeAndChallenge,
+  ResetFitnessByTypeAndChallenge,
   GetFitnessStatus,
   SetFitnessStatusTrue,
   CHALLENGE_LEVEL,

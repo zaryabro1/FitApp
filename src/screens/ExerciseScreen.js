@@ -7,8 +7,9 @@ import {
   Dimensions,
   TouchableOpacity,
   ScrollView,
-  FlatList,
+  FlatList, Alert,
 } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import Button from '../components/Button';
 import LinearGradieant from 'react-native-linear-gradient';
 // import {NavigationC} from '@react-navigation/native';
@@ -16,6 +17,7 @@ import LinearGradieant from 'react-native-linear-gradient';
 import {
   CHALLENGE_LEVEL,
   GetFitnessByTypeAndChallenge,
+  ResetFitnessByTypeAndChallenge,
 } from '../system/FitnessSystem';
 
 const {width, height} = Dimensions.get('window');
@@ -50,6 +52,36 @@ export default class ExerciseScreen extends Component {
     );
     this.setState({data}, this.calculatePercentage);
   };
+
+  resetData = async () => {
+    // const data = await GetFitnessByTypeAndChallenge(
+    //   this.props.route.params.title,
+
+
+    {
+      Alert.alert("Hold on!", "Are you sure you want to reset " + this.props.route.params.title +" ("+this.props.route.params.level+ ")?", [
+        {
+          text: "Cancel",
+          onPress: () => null,
+          style: "cancel"
+        },
+        { text: "YES", onPress: async () => {
+          await ResetFitnessByTypeAndChallenge(this.props.route.params.title, this.props.route.params.level);
+            this.props.navigation.goBack();
+        } }
+      ]);
+      return true;
+    };
+
+
+    //   this.props.route.params.level,
+    // );
+
+    // await ResetFitnessByTypeAndChallenge(this.props.route.params.title, this.props.route.params.level);
+    // this.props.navigation.goBack();
+    // setTimeout(()=>{this.forceUpdate();}, 1000)
+
+  }
 
   calculatePercentage = () => {
     let doneCount = 0;
@@ -292,6 +324,11 @@ export default class ExerciseScreen extends Component {
                   }}>
                   Completed {parseFloat(this.state.percentageDone.toFixed(1))}%
                 </Text>
+                <TouchableOpacity onPress={async () => {this.resetData()}}>
+                  <View style={{backgroundColor: 'rgba(243, 143, 23, 1)', paddingHorizontal: width*0.02, borderRadius: width*0.02}}>
+                    <Text style={{color: '#FFFFFF'}}>Reset</Text>
+                  </View>
+                </TouchableOpacity>
               </View>
             )}
             {/*</ScrollView>*/}
