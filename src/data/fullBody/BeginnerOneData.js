@@ -72,7 +72,7 @@ const data = [
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
     },
       {
-        'title': 'Jumping jack',
+        'title': 'Jumping Jack',
 
         'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
       },
@@ -103,7 +103,7 @@ const data = [
     'time': '3-5 Min',
     'level': 'Beginner 1',
     'exercises': [{
-      'title': 'Step Onto Chair',
+      'title': 'Stepup Onto Chair',
 
 
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
@@ -235,7 +235,7 @@ const data = [
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
     },
       {
-        'title': 'Jumping jack',
+        'title': 'Jumping Jack',
 
 
         'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
@@ -271,7 +271,7 @@ const data = [
     'time': '3-5 Min',
     'level': 'Beginner 1',
     'exercises': [{
-      'title': 'Step Onto Chair',
+      'title': 'Stepup Onto Chair',
 
 
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
@@ -403,7 +403,7 @@ const data = [
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
     },
       {
-        'title': 'Jumping jack',
+        'title': 'Jumping Jack',
 
 
         'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
@@ -439,7 +439,7 @@ const data = [
     'time': '3-5 Min',
     'level': 'Beginner 1',
     'exercises': [{
-      'title': 'Step Onto Chair',
+      'title': 'Stepup Onto Chair',
 
 
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
@@ -571,7 +571,7 @@ const data = [
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
     },
       {
-        'title': 'Jumping jack',
+        'title': 'Jumping Jack',
 
 
         'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
@@ -607,7 +607,7 @@ const data = [
     'time': '3-5 Min',
     'level': 'Beginner 1',
     'exercises': [{
-      'title': 'Step Onto Chair',
+      'title': 'Stepup Onto Chair',
 
 
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
@@ -735,7 +735,7 @@ const data = [
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
     },
       {
-        'title': 'Jumping jack',
+        'title': 'Jumping Jack',
 
         'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
       },
@@ -766,7 +766,7 @@ const data = [
     'time': '3-5 Min',
     'level': 'Beginner 1',
     'exercises': [{
-      'title': 'Step Onto Chair',
+      'title': 'Stepup Onto Chair',
 
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
     },
@@ -880,7 +880,7 @@ const data = [
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
     },
       {
-        'title': 'Jumping jack',
+        'title': 'Jumping Jack',
 
         'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
       },
@@ -911,7 +911,7 @@ const data = [
     'time': '3-5 Min',
     'level': 'Beginner 1',
     'exercises': [{
-      'title': 'Step Onto Chair',
+      'title': 'Stepup Onto Chair',
 
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
     },
@@ -1024,7 +1024,7 @@ const data = [
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
     },
       {
-        'title': 'Jumping jack',
+        'title': 'Jumping Jack',
 
         'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
       },
@@ -1091,7 +1091,7 @@ const data = [
     'time': '3-5 Min',
     'level': 'Beginner 1',
     'exercises': [{
-      'title': 'Step Onto Chair',
+      'title': 'Stepup Onto Chair',
 
       'quantity': 20, 'image': require('../../../assets/gifs/tricep-dips.gif'),
     },

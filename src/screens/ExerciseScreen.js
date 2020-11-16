@@ -123,9 +123,40 @@ export default class ExerciseScreen extends Component {
           colors={['rgba(0, 0, 0, 0.3)', 'rgba(0, 0, 0, 1)']}
           style={styles.mainView}>
           <View style={styles.logo}>
-            <Text style={styles.logoStyle}>
-              {this.props.route.params.title}
-            </Text>
+            <View style={{
+              width: width,
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              flexDirection: 'row',
+            }}>
+              <View style={{marginTop: width*0.12}}>
+                <TouchableOpacity onPress={() => {
+                  this.props.navigation.goBack();
+                }}>
+                  <Image
+                    source={require('../../assets/backbutton.png')}
+                    style={{
+                      resizeMode: 'contain',
+                      width: width * 0.08,
+                      height: width * 0.08,
+                      tintColor: '#F38F17',
+                    }}/>
+                </TouchableOpacity>
+              </View>
+              <Text style={styles.logoStyle}>
+                {this.props.route.params.title}
+              </Text>
+              <View style={{backgroundColor: 'transparent', marginTop: 30}}>
+                <Image
+                  source={require('../../assets/backbutton.png')}
+                  style={{
+                    resizeMode: 'contain',
+                    width: width * 0.1,
+                    height: width * 0.1,
+                    tintColor: 'transparent',
+                  }}/>
+              </View>
+            </View>
             <Text style={styles.typeStyle}>
               ({this.props.route.params.level})
             </Text>
@@ -381,7 +412,7 @@ const styles = {
     flex: 1,
   },
   logoStyle: {
-    fontSize: 25,
+    fontSize: width*0.05,
     // marginBottom: ,
     fontWeight: '600',
     color: 'rgba(243, 143, 23, 1)',

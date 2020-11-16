@@ -15,7 +15,7 @@ export default class Profile extends Component {
       <View style={styles.container}>
         <StatusBar hidden={false} translucent={true} backgroundColor={'transparent'}/>
         <Image
-          source={require('../../assets/imageTwo.jpg')}
+          source={require('../../assets/background/background.png')}
           style={styles.splashImage}/>
         <LinearGradieant colors={['rgba(0, 0, 0, 0.3)', 'rgba(0, 0, 0, 1)']} style={styles.mainView}>
           <View style={styles.logo}>
@@ -32,9 +32,10 @@ export default class Profile extends Component {
                   // }}
                 />
                 <Button buttonText={'Reminder'} style={styles.buttons}
-                  // onPress={() => {
-                  //   this.setState({view: 2});
-                  // }}
+                  onPress={() => {
+                    // console.warn('moving to Reminder');
+                    this.props.navigation.navigate('Reminder');
+                  }}
                 />
                 <Button buttonText={'Settings'} style={styles.buttons}
                   // onPress={() => {
@@ -123,7 +124,7 @@ const styles = {
     fontSize: 40,
     marginBottom: 20,
     fontWeight: '600',
-    color: '#F3D302',
+    color: '#F38F17',
     // position: 'absolute',
     // zIndex: 1003,
     fontFamily: 'JosefinSans-Bold',
@@ -142,9 +143,9 @@ const styles = {
   buttons: {
     height: width * 0.15,
     width: width * 0.9,
-    backgroundColor: 'rgba(255,255,255,0.5)',
-    borderColor: 'rgba(255,255,255,0.7)',
-    borderWidth: 1,
+    backgroundColor: 'rgba(255,255,255,0.3)',
+    borderColor: '#F38F17',
+    borderWidth: 10,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',

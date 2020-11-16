@@ -33,21 +33,21 @@ let _onFinishedLoadingURLSubscription = null;
 export default class StartWorkout extends Component {
 
   backAction = () => {
-    Alert.alert("Hold on!", "You have not completed today's exercises, you will have start over later!", [
+    Alert.alert('Hold on!', 'You have not completed today\'s exercises, you will have start over later!', [
       {
-        text: "Cancel",
+        text: 'Cancel',
         onPress: () => null,
-        style: "cancel"
+        style: 'cancel',
       },
-      { text: "YES", onPress: () => this.props.navigation.goBack() }
+      {text: 'YES', onPress: () => this.props.navigation.goBack()},
     ]);
     return true;
   };
 
   componentDidMount(): void {
     this.backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      this.backAction
+      'hardwareBackPress',
+      this.backAction,
     );
     // console.warn(this.props.route.params.itemName);
 
@@ -84,21 +84,22 @@ export default class StartWorkout extends Component {
 
   startTimerForRest = () => {
     // let secForRest = 30;
-    if(this.countDownInterval)
+    if (this.countDownInterval) {
       clearInterval(this.countDownInterval);
+    }
 
-    this.setState({timer: 30})
+    this.setState({timer: 30});
     this.countDownInterval = setInterval(() => {
       // this.setState({timer: secForRest})
       // secForRest--;
-      this.setState({timer: this.state.timer-1}, () => {
-        if(this.state.timer <= 0 || this.state.toShow !== 5) {
-          clearInterval(this.countDownInterval)
+      this.setState({timer: this.state.timer - 1}, () => {
+        if (this.state.timer <= 0 || this.state.toShow !== 5) {
+          clearInterval(this.countDownInterval);
         }
       });
 
-       // ((this.state.stopTimer == true || (this.state.timer <= 0 && this.state.toShow != 3)) && clearInterval(countdown));
-    }, 1000)
+      // ((this.state.stopTimer == true || (this.state.timer <= 0 && this.state.toShow != 3)) && clearInterval(countdown));
+    }, 1000);
   };
 
   palySound = () => {
@@ -160,16 +161,47 @@ export default class StartWorkout extends Component {
               this.state.workoutIndex <
               this.props.route.params.itemName.length && (
                 <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                  <Text style={styles.logoStyle}>
-                    {
-                      this.props.route.params.itemName[this.state.workoutIndex]
-                        .title
-                    }
-                  </Text>
+                  <View style={{
+                    width: width,
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    flexDirection: 'row',
+                  }}>
+                    <View style={{marginTop: 30}}>
+                      <TouchableOpacity onPress={() => {
+                        this.backAction();
+                      }}>
+                        <Image
+                          source={require('../../assets/backbutton.png')}
+                          style={{
+                            resizeMode: 'contain',
+                            width: width * 0.08,
+                            height: width * 0.08,
+                            tintColor: '#F38F17',
+                          }}/>
+                      </TouchableOpacity>
+                    </View>
+                    <Text style={styles.logoStyle}>
+                      {
+                        this.props.route.params.itemName[this.state.workoutIndex]
+                          .title
+                      }
+                    </Text>
+                    <View style={{backgroundColor: 'transparent', marginTop: 30}}>
+                      <Image
+                        source={require('../../assets/backbutton.png')}
+                        style={{
+                          resizeMode: 'contain',
+                          width: width * 0.1,
+                          height: width * 0.1,
+                          tintColor: 'transparent',
+                        }}/>
+                    </View>
+                  </View>
                   <Image
                     source={
                       (this.props.route.params.itemName[this.state.workoutIndex]
-                          .title == 'Jumping Jack' &&
+                          .title == "Jumping Jack" &&
                         require('../../assets/gifs/jumpingjack.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
                           .title == 'Crunches' &&
@@ -192,9 +224,9 @@ export default class StartWorkout extends Component {
                       (this.props.route.params.itemName[this.state.workoutIndex]
                           .title == 'Planks' &&
                         require('../../assets/gifs/plank_f_rgb.jpg')) ||
-                      (this.props.route.params.itemName[this.state.workoutIndex]
-                          .title == 'Stepup Onto Chair' &&
-                        require('../../assets/gifs/step-up-onto-chair.gif')) ||
+                      // (this.props.route.params.itemName[this.state.workoutIndex]
+                      //     .title == 'Stepup Onto Chair' &&
+                      //   require('../../assets/gifs/squats.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
                           .title == 'Butt Bridge' &&
                         require('../../assets/gifs/butt--brigde.gif')) ||
@@ -218,7 +250,9 @@ export default class StartWorkout extends Component {
                         require('../../assets/gifs/abs/leg-raises.gif')) ||
                       (this.props.route.params.itemName[this.state.workoutIndex]
                           .title == 'Plank' &&
-                        require('../../assets/gifs/abs/plank_f_rgb.jpg'))
+                        require('../../assets/gifs/abs/plank_f_rgb.jpg')) ||
+                      (this.props.route.params.itemName[this.state.workoutIndex].title == 'Stepup Onto Chair' &&
+                        require('../../assets/gifs/step-up-onto-chair.gif'))
                     }
                     style={{
                       width: width * 1,
@@ -330,63 +364,63 @@ export default class StartWorkout extends Component {
                     // zIndex: 1003,
                     fontFamily: 'JosefinSans-Bold',
                   }}>
-                 {this.state.timer} sec
+                  {this.state.timer} sec
                 </Text>
                 <View style={{flexDirection: 'row', justifyContent: 'space-around', width: width}}>
-                <Button
-                  buttonText={'Reset Timer'}
-                  style={{
-                    height: width * 0.14,
-                    width: width * 0.45,
-                    backgroundColor: 'rgba(255,255,255,0.3)',
-                    borderColor: '#F38F17',
-                    borderWidth: width * 0.025,
-                    borderRadius: 10,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    marginBottom: width * 0.15,
-                    marginTop: width * 0.03,
-                  }}
-                  onPress={ () => {
-                    // clearInterval(this.countDownInterval);
-                    // this.setState({stopTimer: true});
-                    // setTimeout(() => {
+                  <Button
+                    buttonText={'Reset Timer'}
+                    style={{
+                      height: width * 0.14,
+                      width: width * 0.45,
+                      backgroundColor: 'rgba(255,255,255,0.3)',
+                      borderColor: '#F38F17',
+                      borderWidth: width * 0.025,
+                      borderRadius: 10,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginBottom: width * 0.15,
+                      marginTop: width * 0.03,
+                    }}
+                    onPress={() => {
+                      // clearInterval(this.countDownInterval);
+                      // this.setState({stopTimer: true});
+                      // setTimeout(() => {
                       // this.startCountdown();
                       // this.setState({stopTimer: false});
                       // this.setState({timer: 30});
-                    //   this.setState({stopTimer: false});
+                      //   this.setState({stopTimer: false});
                       this.startTimerForRest();
                       // },500);
-                  }}
-                />
+                    }}
+                  />
 
-                <Button
-                  buttonText={'Next Exercise'}
-                  style={{
-                    height: width * 0.14,
-                    width: width * 0.45,
-                    backgroundColor: 'rgba(255,255,255,0.3)',
-                    borderColor: '#F38F17',
-                    borderWidth: width * 0.025,
-                    borderRadius: 10,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    marginBottom: width * 0.15,
-                    marginTop: width * 0.03,
-                  }}
-                  onPress={ () => {
-                    this.setState({toShow: 3});
-                    // this.setState({timer: 30});
-                    clearInterval(this.countDownInterval)
-                    // this.setState({stopTimer: true});
+                  <Button
+                    buttonText={'Next Exercise'}
+                    style={{
+                      height: width * 0.14,
+                      width: width * 0.45,
+                      backgroundColor: 'rgba(255,255,255,0.3)',
+                      borderColor: '#F38F17',
+                      borderWidth: width * 0.025,
+                      borderRadius: 10,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginBottom: width * 0.15,
+                      marginTop: width * 0.03,
+                    }}
+                    onPress={() => {
+                      this.setState({toShow: 3});
+                      // this.setState({timer: 30});
+                      clearInterval(this.countDownInterval);
+                      // this.setState({stopTimer: true});
 
-                  }}
-                />
+                    }}
+                  />
 
                 </View>
 
               </View>
-              )) ||
+            )) ||
             (this.state.toShow == 1 && (
               <View
                 style={{
@@ -496,7 +530,7 @@ export default class StartWorkout extends Component {
                     marginTop: 40,
                   }}
                   onPress={async () => {
-                      await SetFitnessStatusTrue(
+                    await SetFitnessStatusTrue(
                       this.props.route.params.title,
                       this.props.route.params.level,
                       this.props.route.params.day,
@@ -605,7 +639,7 @@ export default class StartWorkout extends Component {
                             flexDirection: 'row',
                             paddingTop: width * 0.15,
                             paddingLeft: width * 0.03,
-                            paddingBottom: 20
+                            paddingBottom: 20,
                           }}>
                           <Image
                             style={{width: width * 0.15, height: width * 0.15}}
@@ -626,7 +660,7 @@ export default class StartWorkout extends Component {
                                 require('../../assets/gifs/squats.gif')) ||
                               (item.title == 'Planks' &&
                                 require('../../assets/gifs/plank_f_rgb.jpg')) ||
-                              (item.title == 'Step Onto Chair' &&
+                              (item.title == 'Stepup Onto Chair' &&
                                 require('../../assets/gifs/step-up-onto-chair.gif')) ||
                               (item.title == 'Butt Bridge' &&
                                 require('../../assets/gifs/butt--brigde.gif')) ||
@@ -643,7 +677,9 @@ export default class StartWorkout extends Component {
                               (item.title == 'Leg Raises' &&
                                 require('../../assets/gifs/abs/leg-raises.gif')) ||
                               (item.title == 'Plank' &&
-                                require('../../assets/gifs/abs/plank_f_rgb.jpg'))
+                                require('../../assets/gifs/abs/plank_f_rgb.jpg')) ||
+                              (item.title == 'Stepup Onto Chair' &&
+                                require('../../assets/gifs/step-up-onto-chair.gif'))
                             }
                           />
                           <Text
@@ -684,7 +720,7 @@ export default class StartWorkout extends Component {
                       marginBottom: width * 0.15,
                       marginTop: width * 0.03,
                     }}
-                    onPress={ () => {
+                    onPress={() => {
                       // title, level
                       this.setState({toShow: 1});
                       //SoundPlayer.playSoundFile('go', 'mp3')
@@ -766,7 +802,7 @@ const styles = {
     flex: 1,
   },
   logoStyle: {
-    fontSize: 40,
+    fontSize: width * 0.08,
     // marginBottom: ,
     fontWeight: '600',
     color: '#F38F17',

@@ -38,9 +38,42 @@ export default class WorkoutIntensity extends Component {
           colors={['rgba(0, 0, 0, 0.3)', 'rgba(0, 0, 0, 1)']}
           style={styles.mainView}>
           <View style={styles.logo}>
-            <Text style={styles.logoStyle}>
-              {this.props.route.params.title}
-            </Text>
+
+            <View style={{
+              width: width,
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              flexDirection: 'row',
+            }}>
+              <View style={{marginTop: 17}}>
+                <TouchableOpacity onPress={() => {
+                  this.props.navigation.goBack();
+                }}>
+                  <Image
+                    source={require('../../assets/backbutton.png')}
+                    style={{
+                      resizeMode: 'contain',
+                      width: width * 0.08,
+                      height: width * 0.08,
+                      tintColor: '#F38F17',
+                    }}/>
+                </TouchableOpacity>
+              </View>
+              <Text style={styles.logoStyle}>
+                {this.props.route.params.title}
+              </Text>
+              <View style={{backgroundColor: 'transparent', marginTop: 30}}>
+                <Image
+                  source={require('../../assets/backbutton.png')}
+                  style={{
+                    resizeMode: 'contain',
+                    width: width * 0.1,
+                    height: width * 0.1,
+                    tintColor: 'transparent',
+                  }}/>
+              </View>
+            </View>
+
             <ScrollView style={{paddingTop: 10}}>
               <Button
                 buttonText={CHALLENGE_LEVEL.beginner1}
@@ -299,7 +332,7 @@ const styles = {
     flex: 1,
   },
   logoStyle: {
-    fontSize: 25,
+    fontSize: width*0.05,
     // marginBottom: ,
     fontWeight: '600',
     color: '#F38F17',
